@@ -42,43 +42,88 @@ export const socialLinks: SocialLink[] = [
 export const workExperience: WorkExperience[] = [
   {
     id: "1",
-    company: "Worldcoin",
+    company: "Freelance",
     position: "Software Engineer",
-    startDate: "2024-05",
-    description: "Developed in Codellama software and presented application structure to enhance internal efficiency. Provided feedback to improve both application performance and user experience.",
-    technologies: ["Codellama", "Software Development", "Application Architecture"],
+    startDate: "2025-05",
+    description: "Currently working as a freelance software engineer, developing custom solutions and applications for various clients.",
+    technologies: ["Node.js", "React", "Python", "Django", "API Development"],
     achievements: [
-      "Enhanced internal efficiency through software development",
-      "Improved application performance and user experience",
-      "Presented application structure to stakeholders"
+      "Delivering custom software solutions for diverse clients",
+      "Maintaining high code quality and best practices",
+      "Managing multiple projects simultaneously"
     ]
   },
   {
     id: "2",
-    company: "Network Security Intern, Tiger Logic Africa",
-    position: "Network Security Intern",
-    startDate: "2024-03",
-    endDate: "2024-09",
-    description: "Utilized cutting-edge tools and methods to monitor and audit the network infrastructure. Tested firewalls to make sure they were safe and compliant.",
-    technologies: ["Network Security", "Firewall Testing", "Network Monitoring", "Security Auditing"],
+    company: "Workbrook",
+    position: "Software Engineer",
+    startDate: "2025-04",
+    endDate: "2025-05",
+    description: "Participated in CodeBase reviews and assessed application structure to enhance overall efficiency. Provided feedback to improve both application functionality and workflow.",
+    technologies: ["Code Review", "Application Architecture", "Software Development"],
     achievements: [
-      "Monitored and audited network infrastructure",
-      "Ensured firewall safety and compliance",
-      "Utilized cutting-edge security tools"
+      "Participated in comprehensive codebase reviews",
+      "Enhanced overall application efficiency",
+      "Improved application functionality and workflow through feedback"
     ]
   },
   {
     id: "3",
-    company: "Freelance",
-    position: "Software Engineer",
-    startDate: "2023-01",
-    endDate: "2024-05",
-    description: "Developed pre-secured API endpoints using Node.js, ensuring they met industry standards. Implemented user authentication and authorization systems. Contributed through testing to ensure APIs were robust, safe, and compliant with best practices.",
-    technologies: ["Node.js", "API Development", "Authentication", "Authorization", "Testing"],
+    company: "Tiger Logic Africa",
+    position: "Network Security Intern",
+    startDate: "2024-03",
+    endDate: "2024-09",
+    description: "Handled testing and setup of firewalls to meet security standards. Used technical skills to help reduce system errors. Tested firewalls to make sure they were safe and compliant.",
+    technologies: ["Network Security", "Firewall Configuration", "Security Testing", "System Administration"],
     achievements: [
-      "Developed secure API endpoints meeting industry standards",
-      "Implemented robust authentication and authorization systems",
-      "Ensured API compliance with security best practices"
+      "Handled testing and setup of firewalls to meet security standards",
+      "Reduced system errors through technical expertise",
+      "Ensured firewall safety and compliance with security standards"
+    ]
+  },
+  {
+    id: "4",
+    company: "Timest Web",
+    position: "Backend Developer",
+    startDate: "2024-08",
+    endDate: "2024-09",
+    description: "Developed and secured API endpoints using NestJS, ensuring they met industry and security standards. Identified and fixed backend issues, reducing system errors and improving overall performance.",
+    technologies: ["NestJS", "API Development", "Security", "Backend Development"],
+    achievements: [
+      "Developed secure API endpoints using NestJS meeting industry standards",
+      "Identified and fixed backend issues reducing system errors",
+      "Conducted thorough testing ensuring API reliability and compliance"
+    ]
+  },
+  {
+    id: "5",
+    company: "Wish to Wear",
+    position: "Backend Developer",
+    startDate: "2024-01",
+    endDate: "2024-07",
+    description: "Designed and developed RESTful APIs to facilitate efficient client-server communication. Validated user inputs against the database using Express Validator to ensure data integrity and security.",
+    technologies: ["Node.js", "Express.js", "RESTful APIs", "Express Validator", "Swagger", "Postman"],
+    achievements: [
+      "Designed and developed RESTful APIs for efficient client-server communication",
+      "Implemented data validation using Express Validator for security and integrity",
+      "Led API documentation process with Swagger providing comprehensive developer documentation",
+      "Conducted thorough API testing using Postman ensuring functionality and performance"
+    ]
+  },
+  {
+    id: "6",
+    company: "Edge Tech",
+    position: "Full Stack Developer",
+    startDate: "2023-07",
+    endDate: "2024-01",
+    description: "Designed client-side and server-side architecture and implemented cloud-based backend solutions. Integrated third-party APIs from external applications into web platforms.",
+    technologies: ["Full Stack Development", "Cloud Solutions", "API Integration", "Database Optimization", "RESTful APIs", "Swagger"],
+    achievements: [
+      "Designed and implemented client-side and server-side architecture",
+      "Implemented cloud-based backend solutions",
+      "Successfully integrated third-party APIs into web platforms",
+      "Created RESTful API with proper routing, authentication, and Swagger documentation",
+      "Optimized database queries, indexing, and overall database performance"
     ]
   }
 ];
