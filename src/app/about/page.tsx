@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { MapPin, Calendar, Mail, Phone, Download } from 'lucide-react'
+import { MapPin, Calendar, Mail, Phone } from 'lucide-react'
 import { personalInfo, skills } from '@/data/portfolio'
 
 export default function About() {
@@ -100,16 +100,7 @@ export default function About() {
                 </div>
               </div>
 
-              <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
-                <a
-                  href="/documents/resume.pdf"
-                  download
-                  className="w-full inline-flex items-center justify-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg font-medium transition-colors"
-                >
-                  <Download className="h-4 w-4" />
-                  Download Resume
-                </a>
-              </div>
+
             </div>
           </div>
 

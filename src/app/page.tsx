@@ -25,61 +25,56 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
         </div>
         
-        {/* Profile Section */}
+        {/* Profile Picture */}
         <div className="relative -mt-20 md:-mt-24">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="flex flex-col md:flex-row md:items-end md:space-x-6">
-              {/* Profile Picture */}
-              <div className="relative mx-auto md:mx-0 mb-4 md:mb-0">
-                <div className="h-32 w-32 md:h-40 md:w-40 rounded-full border-4 border-white dark:border-gray-900 overflow-hidden bg-white dark:bg-gray-900">
-                  <Image
-                    src={personalInfo.profileImage}
-                    alt={personalInfo.name}
-                    width={160}
-                    height={160}
-                    className="h-full w-full object-cover"
-                    priority
-                  />
-                </div>
+            <div className="flex justify-center">
+              <div className="h-32 w-32 md:h-40 md:w-40 rounded-full border-4 border-white dark:border-gray-900 overflow-hidden bg-white dark:bg-gray-900">
+                <Image
+                  src={personalInfo.profileImage}
+                  alt={personalInfo.name}
+                  width={160}
+                  height={160}
+                  className="h-full w-full object-cover"
+                  priority
+                />
               </div>
-              
-              {/* Profile Info */}
-              <div className="flex-1 text-center md:text-left pb-6">
-                <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2">
-                  {personalInfo.name}
-                </h1>
-                <p className="text-xl text-gray-600 dark:text-gray-300 mb-3">
-                  {personalInfo.title}
-                </p>
-                <div className="flex flex-wrap justify-center md:justify-start items-center gap-4 text-sm text-gray-500 dark:text-gray-400 mb-4">
-                  <div className="flex items-center gap-1">
-                    <MapPin className="h-4 w-4" />
-                    {personalInfo.location}
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <Calendar className="h-4 w-4" />
-                    Available for opportunities
-                  </div>
-                </div>
-                
-                {/* Action Buttons */}
-                <div className="flex flex-wrap justify-center md:justify-start gap-3">
-                  <Link
-                    href="/contact"
-                    className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-6 py-2 rounded-lg font-medium transition-colors"
-                  >
-                    Get in touch
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                  <Link
-                    href="/resume"
-                    className="inline-flex items-center gap-2 border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 px-6 py-2 rounded-lg font-medium transition-colors"
-                  >
-                    <Download className="h-4 w-4" />
-                    Resume
-                  </Link>
-                </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Personal Info Section - Text Only Below Cover Photo */}
+      <section className="py-8 bg-white dark:bg-gray-900">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="text-center">
+            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3">
+              {personalInfo.name}
+            </h1>
+            <p className="text-xl text-gray-600 dark:text-gray-300 mb-4">
+              {personalInfo.title}
+            </p>
+            <div className="flex flex-wrap justify-center items-center gap-4 text-sm text-gray-500 dark:text-gray-400 mb-6">
+              <div className="flex items-center gap-1">
+                <MapPin className="h-4 w-4" />
+                {personalInfo.location}
               </div>
+              <div className="flex items-center gap-1">
+                <Calendar className="h-4 w-4" />
+                Available for opportunities
+              </div>
+            </div>
+
+            {/* Action Buttons */}
+            <div className="flex flex-wrap justify-center gap-3">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-6 py-2 rounded-lg font-medium transition-colors"
+              >
+                Get in touch
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+
             </div>
           </div>
         </div>

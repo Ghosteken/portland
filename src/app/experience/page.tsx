@@ -154,18 +154,13 @@ export default function Experience() {
               I'm always open to discussing new opportunities and exciting projects. 
               Let's connect and see how we can create something amazing together.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex justify-center">
               <a
-                href="/contact"
-                className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 transition-colors"
-              >
-                Get in touch
-              </a>
-              <a
-                href="/resume"
+                href="/documents/resume.pdf"
+                download
                 className="inline-flex items-center justify-center px-6 py-3 border border-gray-300 dark:border-gray-600 text-base font-medium rounded-md text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
               >
-                View Resume
+                Download Resume
               </a>
             </div>
           </div>

@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Menu, X, Sun, Moon, Download } from 'lucide-react'
+import { Menu, X, Sun, Moon } from 'lucide-react'
 import { useTheme } from 'next-themes'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
@@ -40,7 +40,7 @@ export function Header() {
           <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
             <span className="text-primary-foreground font-bold text-sm">P</span>
           </div>
-          <span className="font-bold text-lg">Portfolio</span>
+          <span className="font-bold text-lg">Nicholas</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -65,7 +65,6 @@ export function Header() {
         <div className="flex items-center space-x-2">
           <Button variant="outline" size="sm" asChild className="hidden sm:flex">
             <Link href="/resume">
-              <Download className="h-4 w-4 mr-2" />
               Resume
             </Link>
           </Button>
@@ -138,7 +137,6 @@ export function Header() {
               <div className="pt-4 space-y-2">
                 <Button variant="outline" className="w-full" asChild>
                   <Link href="/resume" onClick={() => setMobileMenuOpen(false)}>
-                    <Download className="h-4 w-4 mr-2" />
                     Resume
                   </Link>
                 </Button>

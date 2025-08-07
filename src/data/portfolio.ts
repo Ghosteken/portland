@@ -2,12 +2,12 @@ import { PersonalInfo, SocialLink, WorkExperience, Education, Project, Certifica
 import { imageConfig } from '@/lib/image-config';
 
 export const personalInfo: PersonalInfo = {
-  name: "Your Name",
-  title: "Full Stack Developer & Web3 Enthusiast",
-  email: "your.email@example.com",
-  phone: "+1 (555) 123-4567",
-  location: "San Francisco, CA",
-  bio: "Passionate full-stack developer with expertise in modern web technologies and blockchain development. I love creating innovative solutions that bridge the gap between traditional web development and the decentralized future.",
+  name: "Nicholas Aigberua",
+  title: "Software Engineer",
+  email: "aigberuan6@gmail.com",
+  phone: "+234 7080727247",
+  location: "Lagos, Nigeria",
+  bio: "Software engineer with a focus on building scalable, secure systems. Adept at solving complex backend challenges using modern tech like Node.js, Python, Django, React, and Docker. Proven ability to lead API development, integrate third-party services, and optimize performance. Strong collaborative ethos with experience in Agile methodologies and cross-functional team environments.",
   profileImage: imageConfig.profile,
   coverImage: imageConfig.cover
 };
@@ -42,28 +42,43 @@ export const socialLinks: SocialLink[] = [
 export const workExperience: WorkExperience[] = [
   {
     id: "1",
-    company: "Tech Company Inc.",
-    position: "Senior Full Stack Developer",
-    startDate: "2022-01",
-    description: "Led development of scalable web applications using React, Node.js, and cloud technologies.",
-    technologies: ["React", "Node.js", "TypeScript", "AWS", "PostgreSQL"],
+    company: "Worldcoin",
+    position: "Software Engineer",
+    startDate: "2024-05",
+    description: "Developed in Codellama software and presented application structure to enhance internal efficiency. Provided feedback to improve both application performance and user experience.",
+    technologies: ["Codellama", "Software Development", "Application Architecture"],
     achievements: [
-      "Increased application performance by 40%",
-      "Led a team of 5 developers",
-      "Implemented CI/CD pipelines"
+      "Enhanced internal efficiency through software development",
+      "Improved application performance and user experience",
+      "Presented application structure to stakeholders"
     ]
   },
   {
     id: "2",
-    company: "Startup XYZ",
-    position: "Frontend Developer",
-    startDate: "2020-06",
-    endDate: "2021-12",
-    description: "Developed responsive web applications and mobile-first designs.",
-    technologies: ["React", "JavaScript", "CSS3", "Firebase"],
+    company: "Network Security Intern, Tiger Logic Africa",
+    position: "Network Security Intern",
+    startDate: "2024-03",
+    endDate: "2024-09",
+    description: "Utilized cutting-edge tools and methods to monitor and audit the network infrastructure. Tested firewalls to make sure they were safe and compliant.",
+    technologies: ["Network Security", "Firewall Testing", "Network Monitoring", "Security Auditing"],
     achievements: [
-      "Built 3 major product features",
-      "Improved user engagement by 25%"
+      "Monitored and audited network infrastructure",
+      "Ensured firewall safety and compliance",
+      "Utilized cutting-edge security tools"
+    ]
+  },
+  {
+    id: "3",
+    company: "Freelance",
+    position: "Software Engineer",
+    startDate: "2023-01",
+    endDate: "2024-05",
+    description: "Developed pre-secured API endpoints using Node.js, ensuring they met industry standards. Implemented user authentication and authorization systems. Contributed through testing to ensure APIs were robust, safe, and compliant with best practices.",
+    technologies: ["Node.js", "API Development", "Authentication", "Authorization", "Testing"],
+    achievements: [
+      "Developed secure API endpoints meeting industry standards",
+      "Implemented robust authentication and authorization systems",
+      "Ensured API compliance with security best practices"
     ]
   }
 ];
@@ -71,16 +86,27 @@ export const workExperience: WorkExperience[] = [
 export const education: Education[] = [
   {
     id: "1",
-    institution: "University of Technology",
+    institution: "University of Lagos",
+    degree: "B.Levels",
+    field: "Computer Science",
+    startDate: "2021-10",
+    endDate: "2022-08",
+    achievements: [
+      "Completed foundational computer science coursework",
+      "Strong academic performance in core subjects"
+    ]
+  },
+  {
+    id: "2",
+    institution: "University of Lagos",
     degree: "Bachelor of Science",
     field: "Computer Science",
-    startDate: "2016-09",
-    endDate: "2020-05",
-    gpa: "3.8",
+    startDate: "2023-01",
+    endDate: "2025-07",
     achievements: [
-      "Magna Cum Laude",
-      "Dean's List for 6 semesters",
-      "Computer Science Society President"
+      "Currently pursuing degree in Computer Science",
+      "Focus on software engineering and system design",
+      "Active in academic and practical projects"
     ]
   }
 ];
@@ -125,12 +151,27 @@ export const certificates: Certificate[] = [
 ];
 
 export const skills: Skill[] = [
-  { name: "React", level: "Expert", category: "Frontend", icon: "react" },
-  { name: "TypeScript", level: "Advanced", category: "Frontend", icon: "typescript" },
+  // Frontend & Languages
+  { name: "React", level: "Advanced", category: "Frontend", icon: "react" },
   { name: "Node.js", level: "Advanced", category: "Backend", icon: "nodejs" },
+  { name: "Python", level: "Advanced", category: "Backend", icon: "python" },
+  { name: "Django", level: "Advanced", category: "Backend", icon: "django" },
+  { name: "JavaScript", level: "Advanced", category: "Frontend", icon: "javascript" },
+  { name: "HTML/CSS", level: "Advanced", category: "Frontend", icon: "html" },
+
+  // Databases
   { name: "PostgreSQL", level: "Intermediate", category: "Database", icon: "postgresql" },
-  { name: "AWS", level: "Intermediate", category: "DevOps", icon: "aws" },
-  { name: "Solidity", level: "Intermediate", category: "Web3", icon: "solidity" }
+  { name: "MongoDB", level: "Intermediate", category: "Database", icon: "mongodb" },
+
+  // DevOps & Tools
+  { name: "Docker", level: "Intermediate", category: "DevOps", icon: "docker" },
+  { name: "Git", level: "Advanced", category: "DevOps", icon: "git" },
+  { name: "Linux", level: "Intermediate", category: "DevOps", icon: "linux" },
+
+  // Methodologies
+  { name: "Agile Methodologies", level: "Advanced", category: "Other", icon: "agile" },
+  { name: "API Development", level: "Advanced", category: "Backend", icon: "api" },
+  { name: "Testing", level: "Intermediate", category: "Other", icon: "testing" }
 ];
 
 export const web3Experience: Web3Experience = {
