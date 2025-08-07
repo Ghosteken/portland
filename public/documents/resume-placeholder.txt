@@ -1,0 +1,7 @@
+# Resume PDF Placeholder
+
+This folder should contain:
+- resume.pdf - Your actual resume in PDF format
+
+For now, you can create a PDF version of your resume and place it here.
+The portfolio includes a resume viewer page and download functionality.

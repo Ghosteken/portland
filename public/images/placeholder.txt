@@ -1,0 +1,29 @@
+# Image Placeholders
+
+This folder should contain the following images for the portfolio:
+
+## Profile Images
+- profile.jpg - Your profile picture (square, 400x400px recommended)
+- cover.jpg - Cover photo for hero section (1920x600px recommended)
+
+## Project Images
+- project1-1.jpg - E-Commerce Platform screenshot
+- project1-2.jpg - E-Commerce Platform additional screenshot
+- project2-1.jpg - DeFi Dashboard screenshot
+
+## Certificate Images
+- aws-cert.jpg - AWS certification image
+
+## Recommended Image Sources
+- Use your actual photos for profile and cover
+- For project screenshots, use actual project images or create mockups
+- For certificates, scan or download official certificate images
+- For placeholder images during development, you can use services like:
+  - https://via.placeholder.com/400x400 for profile
+  - https://via.placeholder.com/1920x600 for cover
+  - https://via.placeholder.com/800x600 for projects
+
+## Image Optimization
+- Use WebP format when possible for better performance
+- Optimize images before uploading
+- Consider using Next.js Image component for automatic optimization
