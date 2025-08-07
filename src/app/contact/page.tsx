@@ -57,21 +57,21 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Contact Information */}
           <div className="lg:col-span-1">
-            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8 sticky top-24">
+            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8 sticky top-24 hover:shadow-xl transition-shadow duration-300">
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
                 Contact Information
               </h2>
               
               <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Mail className="h-6 w-6 text-primary-600" />
+                <div className="flex items-start gap-4 p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors group">
+                  <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                    <Mail className="h-6 w-6 text-blue-600 group-hover:text-blue-700 transition-colors" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 dark:text-white mb-1">Email</h3>
-                    <a 
+                    <a
                       href={`mailto:${personalInfo.email}`}
-                      className="text-gray-600 dark:text-gray-300 hover:text-primary-600 transition-colors"
+                      className="text-gray-600 dark:text-gray-300 hover:text-blue-600 transition-colors"
                     >
                       {personalInfo.email}
                     </a>
@@ -128,17 +128,24 @@ export default function Contact() {
                 <div className="flex gap-4">
                   {socialLinks.map((link) => {
                     const IconComponent = socialIcons[link.icon as keyof typeof socialIcons]
+                    const iconColors = {
+                      github: "text-gray-800 dark:text-white hover:text-gray-900 dark:hover:text-gray-100",
+                      linkedin: "text-blue-600 hover:text-blue-700",
+                      twitter: "text-blue-400 hover:text-blue-500",
+                      instagram: "text-pink-500 hover:text-pink-600",
+                    }
+                    const colorClass = iconColors[link.icon as keyof typeof iconColors]
                     if (!IconComponent) return null
-                    
+
                     return (
                       <Link
                         key={link.platform}
                         href={link.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-10 h-10 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center hover:bg-primary-100 dark:hover:bg-primary-900 hover:text-primary-600 transition-colors"
+                        className="w-10 h-10 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
                       >
-                        <IconComponent className="h-5 w-5" />
+                        <IconComponent className={`h-5 w-5 ${colorClass} transition-colors`} />
                       </Link>
                     )
                   })}
@@ -149,7 +156,7 @@ export default function Contact() {
 
           {/* Contact Form */}
           <div className="lg:col-span-2">
-            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8">
+            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8 hover:shadow-xl transition-shadow duration-300">
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
                 Send me a message
               </h2>
@@ -186,7 +193,7 @@ export default function Contact() {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                        className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                         placeholder="Your full name"
                       />
                     </div>
@@ -201,7 +208,7 @@ export default function Contact() {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                        className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                         placeholder="your.email@example.com"
                       />
                     </div>
@@ -218,7 +225,7 @@ export default function Contact() {
                       value={formData.subject}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                       placeholder="What's this about?"
                     />
                   </div>
@@ -234,7 +241,7 @@ export default function Contact() {
                       onChange={handleChange}
                       required
                       rows={6}
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white resize-none"
+                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white resize-none"
                       placeholder="Tell me about your project, question, or just say hello..."
                     />
                   </div>
@@ -242,7 +249,7 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full inline-flex items-center justify-center gap-2 bg-primary-600 hover:bg-primary-700 disabled:bg-primary-400 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+                    className="w-full inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white px-6 py-4 rounded-lg font-medium transition-colors shadow-md hover:shadow-lg border-2 border-blue-600 hover:border-blue-700 text-lg"
                   >
                     {isSubmitting ? (
                       <>

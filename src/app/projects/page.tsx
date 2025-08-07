@@ -12,28 +12,33 @@ export default function Projects() {
           <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white mb-4">
             My Projects
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-4">
             A showcase of my work, from web applications to blockchain projects
           </p>
+          <div className="inline-flex items-center gap-2 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 px-4 py-2 rounded-full text-sm font-medium">
+            <div className="w-2 h-2 bg-yellow-500 rounded-full animate-pulse"></div>
+            Updating Projects
+          </div>
         </div>
 
         {/* Projects List */}
         <div className="space-y-6">
-          {projects.map((project) => (
+          {projects.map((project, index) => (
             <div
               key={project.id}
-              className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6"
+              className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6 hover:shadow-xl hover:scale-105 transition-all duration-300 group"
+              style={{ animationDelay: `${index * 150}ms` }}
             >
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0">
-                  <Github className="h-8 w-8 text-blue-600" />
+                  <Github className="h-8 w-8 text-blue-600 group-hover:text-blue-700 group-hover:scale-110 transition-all duration-300" />
                 </div>
                 <div className="flex-1">
                   <div className="flex items-start justify-between mb-3">
-                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                       {project.title}
                     </h3>
-                    <span className="text-sm text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full">
+                    <span className="text-sm text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full group-hover:bg-blue-100 dark:group-hover:bg-blue-900 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors">
                       {project.category}
                     </span>
                   </div>

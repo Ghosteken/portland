@@ -19,6 +19,14 @@ export function Footer() {
         <div className="flex justify-center space-x-6 md:order-2">
           {socialLinks.map((link) => {
             const IconComponent = socialIcons[link.icon as keyof typeof socialIcons]
+            const iconColors = {
+              github: "text-gray-800 dark:text-white hover:text-gray-900 dark:hover:text-gray-100",
+              linkedin: "text-blue-600 hover:text-blue-700",
+              twitter: "text-blue-400 hover:text-blue-500",
+              instagram: "text-pink-500 hover:text-pink-600",
+              email: "text-green-600 hover:text-green-700",
+            }
+            const colorClass = iconColors[link.icon as keyof typeof iconColors] || "text-muted-foreground hover:text-foreground"
             if (!IconComponent) return null
 
             return (
@@ -27,7 +35,7 @@ export function Footer() {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground transition-colors"
+                className={`${colorClass} transition-colors`}
               >
                 <span className="sr-only">{link.platform}</span>
                 <IconComponent className="h-5 w-5" aria-hidden="true" />

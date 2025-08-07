@@ -99,14 +99,14 @@ export function Header() {
       {/* Mobile menu */}
       {mobileMenuOpen && (
         <div className="md:hidden">
-          <div className="fixed inset-0 z-50 bg-background/80 backdrop-blur-sm" onClick={() => setMobileMenuOpen(false)} />
-          <div className="fixed inset-y-0 right-0 z-50 w-full max-w-sm bg-background p-6 shadow-lg">
+          <div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm" onClick={() => setMobileMenuOpen(false)} />
+          <div className="fixed inset-y-0 right-0 z-50 w-full max-w-sm bg-white dark:bg-gray-900 p-6 shadow-xl border-l border-gray-200 dark:border-gray-700">
             <div className="flex items-center justify-between">
               <Link href="/" className="flex items-center space-x-2" onClick={() => setMobileMenuOpen(false)}>
-                <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
-                  <span className="text-primary-foreground font-bold text-sm">P</span>
+                <div className="h-8 w-8 rounded-lg bg-blue-600 flex items-center justify-center">
+                  <span className="text-white font-bold text-sm">N</span>
                 </div>
-                <span className="font-bold text-lg">Portfolio</span>
+                <span className="font-bold text-lg text-gray-900 dark:text-white">Nicholas</span>
               </Link>
               <Button
                 variant="ghost"
@@ -125,8 +125,8 @@ export function Header() {
                   className={cn(
                     "block px-3 py-2 rounded-md text-base font-medium transition-colors",
                     pathname === item.href
-                      ? "bg-accent text-accent-foreground"
-                      : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
+                      ? "bg-blue-100 dark:bg-blue-900 text-blue-900 dark:text-blue-100"
+                      : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white"
                   )}
                   onClick={() => setMobileMenuOpen(false)}
                 >
@@ -135,7 +135,7 @@ export function Header() {
               ))}
 
               <div className="pt-4 space-y-2">
-                <Button variant="outline" className="w-full" asChild>
+                <Button variant="outline" className="w-full border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800" asChild>
                   <Link href="/resume" onClick={() => setMobileMenuOpen(false)}>
                     Resume
                   </Link>

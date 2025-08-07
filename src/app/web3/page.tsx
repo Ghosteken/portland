@@ -1,4 +1,5 @@
-import { Coins, BookOpen, Users } from 'lucide-react'
+import Link from 'next/link'
+import { Coins, BookOpen, Users, ExternalLink } from 'lucide-react'
 
 export default function Web3() {
   const blockchains = [
@@ -10,12 +11,12 @@ export default function Web3() {
     { name: 'Avalanche', icon: '🔺', color: 'text-red-500' }
   ]
   const defiProtocols = [
-    { name: 'Uniswap', icon: '🦄', color: 'text-pink-500' },
-    { name: 'Aave', icon: '👻', color: 'text-purple-600' },
-    { name: 'Compound', icon: '🏛️', color: 'text-green-600' },
-    { name: 'MakerDAO', icon: '🏭', color: 'text-orange-500' },
-    { name: 'Curve', icon: '🌊', color: 'text-blue-400' },
-    { name: 'SushiSwap', icon: '🍣', color: 'text-red-400' }
+    { name: 'Uniswap', icon: '🦄', color: 'text-pink-500', url: 'https://app.uniswap.org' },
+    { name: 'Aave', icon: '👻', color: 'text-purple-600', url: 'https://app.aave.com' },
+    { name: 'Compound', icon: '🏛️', color: 'text-green-600', url: 'https://app.compound.finance' },
+    { name: 'MakerDAO', icon: '🏭', color: 'text-orange-500', url: 'https://makerdao.com' },
+    { name: 'Curve', icon: '🌊', color: 'text-blue-400', url: 'https://curve.fi' },
+    { name: 'SushiSwap', icon: '🍣', color: 'text-red-400', url: 'https://app.sushi.com' }
   ]
   const learningAreas = [
     'Blockchain fundamentals and consensus mechanisms',
@@ -48,10 +49,10 @@ export default function Web3() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {learningAreas.map((area, index) => (
-              <div key={index} className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+              <div key={index} className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6 hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer group">
                 <div className="flex items-start gap-3">
-                  <BookOpen className="h-5 w-5 text-blue-600 mt-1 flex-shrink-0" />
-                  <p className="text-gray-900 dark:text-white">{area}</p>
+                  <BookOpen className="h-5 w-5 text-blue-600 mt-1 flex-shrink-0 group-hover:text-blue-700 transition-colors" />
+                  <p className="text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{area}</p>
                 </div>
               </div>
             ))}
@@ -63,11 +64,15 @@ export default function Web3() {
             Blockchain Networks I'm Exploring
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {blockchains.map((blockchain) => (
-              <div key={blockchain.name} className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-4">
+            {blockchains.map((blockchain, index) => (
+              <div
+                key={blockchain.name}
+                className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-4 hover:shadow-xl hover:scale-110 transition-all duration-300 cursor-pointer group"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
                 <div className="flex items-center gap-3">
-                  <span className={`text-2xl ${blockchain.color}`}>{blockchain.icon}</span>
-                  <span className="text-gray-900 dark:text-white font-medium">{blockchain.name}</span>
+                  <span className={`text-2xl ${blockchain.color} group-hover:scale-125 transition-transform duration-300`}>{blockchain.icon}</span>
+                  <span className="text-gray-900 dark:text-white font-medium group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{blockchain.name}</span>
                 </div>
               </div>
             ))}
@@ -79,25 +84,35 @@ export default function Web3() {
             DeFi Protocols I'm Learning About
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {defiProtocols.map((protocol) => (
-              <div key={protocol.name} className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-4">
-                <div className="flex items-center gap-3">
-                  <span className={`text-2xl ${protocol.color}`}>{protocol.icon}</span>
-                  <span className="text-gray-900 dark:text-white font-medium">{protocol.name}</span>
+            {defiProtocols.map((protocol, index) => (
+              <Link
+                key={protocol.name}
+                href={protocol.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-4 hover:shadow-xl hover:scale-110 transition-all duration-300 cursor-pointer group hover:border-blue-300 dark:hover:border-blue-600 block"
+                style={{ animationDelay: `${index * 150}ms` }}
+              >
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <span className={`text-2xl ${protocol.color} group-hover:scale-125 transition-transform duration-300`}>{protocol.icon}</span>
+                    <span className="text-gray-900 dark:text-white font-medium group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{protocol.name}</span>
+                  </div>
+                  <ExternalLink className="h-4 w-4 text-gray-400 group-hover:text-blue-600 transition-colors" />
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
 
         <div className="text-center">
-          <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-8">
-            <Users className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+          <div className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-900 rounded-lg p-8 hover:shadow-xl transition-all duration-300 group">
+            <Users className="h-12 w-12 text-blue-600 mx-auto mb-4 group-hover:scale-110 group-hover:text-blue-700 transition-all duration-300" />
+            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
               Continuous Learning Journey
             </h3>
-            <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              I'm passionate about understanding the Web3 ecosystem, from blockchain fundamentals to DeFi innovations. 
+            <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
+              I'm passionate about understanding the Web3 ecosystem, from blockchain fundamentals to DeFi innovations.
               Always exploring new protocols, learning about tokenomics, and staying updated with the latest developments in the space.
             </p>
           </div>

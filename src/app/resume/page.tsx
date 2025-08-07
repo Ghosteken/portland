@@ -261,8 +261,20 @@ export default function Resume() {
           </section>
         </div>
 
+        {/* Download Button at Bottom */}
+        <div className="mt-8 text-center print:hidden">
+          <a
+            href="/documents/resume.pdf"
+            download
+            className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-medium transition-colors text-lg"
+          >
+            <Download className="h-6 w-6" />
+            Download Resume PDF
+          </a>
+        </div>
+
         {/* Print Instructions */}
-        <div className="mt-8 text-center text-sm text-gray-500 dark:text-gray-400 print:hidden">
+        <div className="mt-6 text-center text-sm text-gray-500 dark:text-gray-400 print:hidden">
           <p>
             To print this resume, use your browser's print function (Ctrl+P / Cmd+P) or download the PDF version above.
           </p>

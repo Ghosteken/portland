@@ -1,9 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, Download, MapPin, Calendar, Github, Linkedin, Twitter, Instagram, Mail, Phone } from 'lucide-react'
-import { personalInfo, socialLinks, projects, workExperience, skills } from '@/data/portfolio'
-import { Button } from '@/components/ui/button'
-import { imageConfig } from '@/lib/image-config'
+import { ArrowRight, MapPin, Calendar, Github, Linkedin, Twitter, Instagram } from 'lucide-react'
+import { personalInfo, socialLinks, workExperience } from '@/data/portfolio'
+
 
 export default function Home() {
   const latestExperience = workExperience[0]
@@ -13,28 +12,28 @@ export default function Home() {
       {/* Hero Section with Cover Photo */}
       <section className="relative">
         {/* Cover Photo */}
-        <div className="h-64 md:h-80 lg:h-96 relative overflow-hidden">
+        <div className="h-64 md:h-80 lg:h-96 relative overflow-hidden group">
           <Image
             src={personalInfo.coverImage}
             alt="Cover"
             fill
-            className="object-cover"
+            className="object-cover group-hover:scale-105 transition-transform duration-700"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent group-hover:from-black/40 transition-all duration-700" />
         </div>
         
         {/* Profile Picture */}
         <div className="relative -mt-20 md:-mt-24">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="flex justify-center">
-              <div className="h-32 w-32 md:h-40 md:w-40 rounded-full border-4 border-white dark:border-gray-900 overflow-hidden bg-white dark:bg-gray-900">
+              <div className="h-32 w-32 md:h-40 md:w-40 rounded-full border-4 border-white dark:border-gray-900 overflow-hidden bg-white dark:bg-gray-900 hover:scale-110 transition-all duration-300 cursor-pointer group focus:outline-none">
                 <Image
                   src={personalInfo.profileImage}
                   alt={personalInfo.name}
                   width={160}
                   height={160}
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
                   priority
                 />
               </div>
@@ -120,10 +119,17 @@ export default function Home() {
                 twitter: Twitter,
                 instagram: Instagram,
               }
+              const iconColors = {
+                github: "text-gray-800 dark:text-white group-hover:text-gray-900 dark:group-hover:text-gray-100",
+                linkedin: "text-blue-600 group-hover:text-blue-700",
+                twitter: "text-blue-400 group-hover:text-blue-500",
+                instagram: "text-pink-500 group-hover:text-pink-600",
+              }
               const IconComponent = icons[link.icon as keyof typeof icons]
-              
+              const colorClass = iconColors[link.icon as keyof typeof iconColors]
+
               if (!IconComponent) return null
-              
+
               return (
                 <Link
                   key={link.platform}
@@ -132,7 +138,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="group flex flex-col items-center p-4 rounded-lg hover:bg-white dark:hover:bg-gray-700 transition-colors"
                 >
-                  <IconComponent className="h-8 w-8 text-gray-600 dark:text-gray-400 group-hover:text-primary-600 transition-colors mb-2" />
+                  <IconComponent className={`h-8 w-8 ${colorClass} transition-colors mb-2`} />
                   <span className="text-sm font-medium text-gray-900 dark:text-white">
                     {link.platform}
                   </span>

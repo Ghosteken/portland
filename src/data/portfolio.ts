@@ -7,35 +7,23 @@ export const personalInfo: PersonalInfo = {
   email: "aigberuan6@gmail.com",
   phone: "+234 7080727247",
   location: "Lagos, Nigeria",
-  bio: "Software engineer with a focus on building scalable, secure systems. Adept at solving complex backend challenges using modern tech like Node.js, Python, Django, React, and Docker. Proven ability to lead API development, integrate third-party services, and optimize performance. Strong collaborative ethos with experience in Agile methodologies and cross-functional team environments.",
+  bio: "Software engineer with a focus on building scalable, secure systems. Adept at solving complex backend challenges using modern tech like Node.js, Python, React, and Docker. Proven ability to lead API development, integrate third-party services, and optimize performance. Strong collaborative ethos with experience in Agile methodologies and cross-functional team environments.",
   profileImage: imageConfig.profile,
   coverImage: imageConfig.cover
 };
 
 export const socialLinks: SocialLink[] = [
   {
-    platform: "LinkedIn",
-    url: "https://linkedin.com/in/yourprofile",
-    icon: "linkedin",
-    username: "yourprofile"
-  },
-  {
     platform: "GitHub",
-    url: "https://github.com/yourusername",
+    url: "https://github.com/Ghosteken",
     icon: "github",
-    username: "yourusername"
+    username: "Ghosteken"
   },
   {
-    platform: "Twitter",
-    url: "https://twitter.com/yourusername",
-    icon: "twitter",
-    username: "@yourusername"
-  },
-  {
-    platform: "Instagram",
-    url: "https://instagram.com/yourusername",
-    icon: "instagram",
-    username: "@yourusername"
+    platform: "LinkedIn",
+    url: "https://www.linkedin.com/in/aigberua-nicholas/",
+    icon: "linkedin",
+    username: "aigberua-nicholas"
   }
 ];
 
@@ -46,7 +34,7 @@ export const workExperience: WorkExperience[] = [
     position: "Software Engineer",
     startDate: "2025-05",
     description: "Currently working as a freelance software engineer, developing custom solutions and applications for various clients.",
-    technologies: ["Node.js", "React", "Python", "Django", "API Development"],
+    technologies: ["Node.js", "React", "Python", "API Development"],
     achievements: [
       "Delivering custom software solutions for diverse clients",
       "Maintaining high code quality and best practices",
@@ -200,7 +188,6 @@ export const skills: Skill[] = [
   { name: "React", level: "Advanced", category: "Frontend", icon: "react" },
   { name: "Node.js", level: "Advanced", category: "Backend", icon: "nodejs" },
   { name: "Python", level: "Advanced", category: "Backend", icon: "python" },
-  { name: "Django", level: "Advanced", category: "Backend", icon: "django" },
   { name: "JavaScript", level: "Advanced", category: "Frontend", icon: "javascript" },
   { name: "HTML/CSS", level: "Advanced", category: "Frontend", icon: "html" },
 
@@ -212,6 +199,12 @@ export const skills: Skill[] = [
   { name: "Docker", level: "Intermediate", category: "DevOps", icon: "docker" },
   { name: "Git", level: "Advanced", category: "DevOps", icon: "git" },
   { name: "Linux", level: "Intermediate", category: "DevOps", icon: "linux" },
+
+  // Networking
+  { name: "Firewall Configuration", level: "Intermediate", category: "Networking", icon: "firewall" },
+  { name: "Network Security", level: "Intermediate", category: "Networking", icon: "security" },
+  { name: "Security Auditing", level: "Intermediate", category: "Networking", icon: "audit" },
+  { name: "Network Monitoring", level: "Intermediate", category: "Networking", icon: "monitoring" },
 
   // Methodologies
   { name: "Agile Methodologies", level: "Advanced", category: "Other", icon: "agile" },
