@@ -4,7 +4,7 @@
 export const imageConfig = {
   // Profile and cover images
   profile: "/images/profile.jpg", // Add your profile picture here (400x400px recommended)
-  cover: "/images/cover.jpg",     // Add your cover photo here (1920x600px recommended)
+  cover: "/images/cover.JPG",     // Add your cover photo here (1920x600px recommended)
   
   // Project images
   projects: {
