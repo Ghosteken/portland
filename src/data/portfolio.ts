@@ -147,26 +147,70 @@ export const education: Education[] = [
 export const projects: Project[] = [
   {
     id: "1",
-    title: "E-Commerce Platform",
-    description: "Full-stack e-commerce solution with payment integration",
-    longDescription: "A comprehensive e-commerce platform built with modern technologies, featuring user authentication, product management, shopping cart, and secure payment processing.",
-    technologies: ["Next.js", "TypeScript", "Stripe", "PostgreSQL", "Tailwind CSS"],
-    images: imageConfig.projects.ecommerce,
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com/yourusername/project1",
+    title: "Contact Manager API (Node.js)",
+    description: "RESTful backend for managing contacts with CRUD, validation, and structured controllers/middleware.",
+    longDescription: "Built with Node.js + Express and MongoDB (Mongoose). Features clean controllers, input validation, error-handling middleware, and test coverage. Optional auth can restrict sensitive actions.",
+    technologies: ["Node.js", "Express", "MongoDB", "Mongoose", "Jest", "Supertest"],
+    images: [],
+    githubUrl: "https://github.com/Ghosteken/Contact_app",
     featured: true,
     category: "web"
   },
   {
     id: "2",
-    title: "DeFi Dashboard",
-    description: "Web3 dashboard for tracking DeFi investments",
-    technologies: ["React", "Web3.js", "Ethers.js", "Chart.js"],
-    images: imageConfig.projects.defi,
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com/yourusername/project2",
+    title: "Landing Page v2 (Next.js)",
+    description: "Modern, responsive marketing page with clean sections and fast loads.",
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Vercel"],
+    images: [],
+    liveUrl: "https://landing-page2-vert.vercel.app/",
+    githubUrl: "https://github.com/Ghosteken/LandingPage2",
+    featured: false,
+    category: "web"
+  },
+  {
+    id: "3",
+    title: "Landing Page v1 (Next.js)",
+    description: "Responsive product landing page with focused CTA and sections.",
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Vercel"],
+    images: [],
+    liveUrl: "https://landing-page1-orcin.vercel.app/",
+    githubUrl: "https://github.com/Ghosteken/landing_page1",
+    featured: false,
+    category: "web"
+  },
+  {
+    id: "4",
+    title: "Full-Stack Todo App",
+    description: "Simple CRUD todo app: REST API backend and a lightweight React frontend.",
+    technologies: ["React", "Node.js", "Express", "MongoDB"],
+    images: [],
+    liveUrl: "https://fullstack-todoapp-frontend.vercel.app/",
+    githubUrl: "https://github.com/Ghosteken/Fullstack_todoapp_frontend",
     featured: true,
-    category: "web3"
+    category: "web"
+  },
+  {
+    id: "5",
+    title: "Landing Page v3 (Next.js)",
+    description: "Another fast and clean Next.js landing variant with responsive layout.",
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Vercel"],
+    images: [],
+    liveUrl: "https://landingtest-eight.vercel.app/",
+    githubUrl: "https://github.com/Ghosteken/landingtest",
+    featured: false,
+    category: "web"
+  },
+  {
+    id: "6",
+    title: "Real-Time Chat App (Backend)",
+    description: "Chat backend with JWT auth, public/private rooms, Socket.IO messaging, presence, typing, and rate limiting.",
+    longDescription: "Node.js + Express + TypeScript with Socket.IO and MySQL (Prisma). Persists message history, tracks presence/last seen, and enforces per-room rate limits.",
+    technologies: ["Node.js", "Express", "TypeScript", "Socket.IO", "MySQL", "Prisma", "JWT", "Jest"],
+    images: [],
+    liveUrl: "https://chat-app-hxzf.onrender.com/",
+    githubUrl: "https://github.com/Ghosteken/chat-app",
+    featured: true,
+    category: "web"
   }
 ];
 
