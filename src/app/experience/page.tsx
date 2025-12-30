@@ -1,5 +1,5 @@
 import { Calendar, MapPin, ExternalLink, Award, GraduationCap, CheckCircle } from 'lucide-react'
-import { workExperience, education, certificates, personalInfo, socialLinks } from '@/data/portfolio'
+import { workExperience, education, certificates } from '@/data/portfolio'
 import { Button } from '@/components/ui/button'
 
 export default function Experience() {
@@ -43,25 +43,7 @@ export default function Experience() {
           </p>
         </div>
 
-        {/* Summary */}
-        <div className="mb-12 bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border border-gray-200 dark:border-gray-700">
-          <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-3">Summary</h2>
-          <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-            {personalInfo.bio}
-          </p>
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-            <div className="text-gray-700 dark:text-gray-300">
-              <span className="font-medium">Contact:</span> {personalInfo.email} • {personalInfo.phone}
-            </div>
-            <div className="flex flex-wrap gap-3">
-              {socialLinks.map(link => (
-                <a key={link.platform} href={link.url} target="_blank" rel="noopener noreferrer" className="text-primary-700 dark:text-primary-300 hover:underline">
-                  {link.platform}
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
+        {/* Summary removed per user request */}
 
         {/* Timeline */}
         <div className="relative">
