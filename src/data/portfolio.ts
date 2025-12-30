@@ -7,7 +7,7 @@ export const personalInfo: PersonalInfo = {
   email: "aigberuan6@gmail.com",
   phone: "+234 7080727247",
   location: "Lagos, Nigeria",
-  bio: "Software engineer with a focus on building scalable, secure systems. Adept at solving complex backend challenges using modern tech like Node.js, Python, React, and Docker. Proven ability to lead API development, integrate third-party services, and optimize performance. Strong collaborative ethos with experience in Agile methodologies and cross-functional team environments.",
+  bio: "I’m a Software Engineer who enjoys building systems that are fast, secure, and built to scale. Most of my work revolves around backend engineering working with tools like Node.js, Python and Docker to solve real problems. I’ve led API development, integrated third-party services, and improved database performance to make apps run smoother. I work well in agile teams, communicate clearly, and like being hands-on with the whole stack from cloud infrastructure and CI/CD pipelines to network security and performance tuning. In short, I like building reliable systems that actually work in the real world.",
   profileImage: imageConfig.profile,
   coverImage: imageConfig.cover
 };
@@ -29,16 +29,34 @@ export const socialLinks: SocialLink[] = [
 
 export const workExperience: WorkExperience[] = [
   {
-    id: "1",
-    company: "Freelance",
+    id: "0",
+    company: "Appnable",
     position: "Software Engineer",
-    startDate: "2025-05",
-    description: "Currently working as a freelance software engineer, developing custom solutions and applications for various clients.",
-    technologies: ["Node.js", "React", "Python", "API Development"],
+    startDate: "2025-11",
+    description: "Developed and maintained backend services using Node.js with TypeScript, focusing on complex API logic and performance optimization. Managed database operations and authentication flows with Supabase for secure data handling and smooth integrations. Implemented CI/CD pipelines and automated deployments using GitHub Actions for reliable releases. Worked with Azure for hosting, scaling, and environment management. Performed testing and debugging to improve stability and resolve production issues.",
+    technologies: ["Node.js", "TypeScript", "Supabase", "Azure", "GitHub Actions", "CI/CD", "PostgreSQL", "MongoDB", "Docker"],
     achievements: [
-      "Delivering custom software solutions for diverse clients",
-      "Maintaining high code quality and best practices",
-      "Managing multiple projects simultaneously"
+      "Built and optimized complex API logic for scalable services",
+      "Managed authentication and data flows using Supabase",
+      "Automated deployments with GitHub Actions and CI/CD",
+      "Operated and scaled infrastructure on Azure",
+      "Improved service reliability through testing and debugging"
+    ]
+  },
+  {
+    id: "1",
+    company: "Sceptre",
+    position: "Project Lead Developer (Freelance)",
+    startDate: "2024-04",
+    endDate: "2025-11",
+    description: "Led product development and guided the technical direction of core features. Coordinated tasks across development, design, and product teams for smooth delivery. Integrated APIs and backend services to enhance performance and reliability. Reviewed code and development workflows to improve efficiency and maintain standards. Facilitated stakeholder communication to ensure alignment and timely execution.",
+    technologies: ["Node.js", "API Integration", "Project Management", "Code Review", "Agile"],
+    achievements: [
+      "Drove technical direction and feature delivery",
+      "Coordinated cross-functional teams for on-time milestones",
+      "Integrated services to improve reliability and performance",
+      "Elevated efficiency through code and workflow reviews",
+      "Kept stakeholders aligned for timely execution"
     ]
   },
   {
@@ -230,19 +248,33 @@ export const certificates: Certificate[] = [
 export const skills: Skill[] = [
   // Frontend & Languages
   { name: "React", level: "Advanced", category: "Frontend", icon: "react" },
+  { name: "TypeScript", level: "Advanced", category: "Frontend", icon: "typescript" },
   { name: "Node.js", level: "Advanced", category: "Backend", icon: "nodejs" },
+  { name: "Express.js", level: "Advanced", category: "Backend", icon: "express" },
   { name: "Python", level: "Advanced", category: "Backend", icon: "python" },
   { name: "JavaScript", level: "Advanced", category: "Frontend", icon: "javascript" },
   { name: "HTML/CSS", level: "Advanced", category: "Frontend", icon: "html" },
 
   // Databases
   { name: "PostgreSQL", level: "Intermediate", category: "Database", icon: "postgresql" },
+  { name: "MySQL", level: "Intermediate", category: "Database", icon: "mysql" },
   { name: "MongoDB", level: "Intermediate", category: "Database", icon: "mongodb" },
+  { name: "Supabase", level: "Intermediate", category: "Database", icon: "supabase" },
+  { name: "Redis", level: "Intermediate", category: "Database", icon: "redis" },
+  { name: "Prisma", level: "Advanced", category: "Backend", icon: "prisma" },
+  { name: "TypeORM", level: "Intermediate", category: "Backend", icon: "typeorm" },
+  { name: "Mongoose", level: "Intermediate", category: "Backend", icon: "mongoose" },
 
   // DevOps & Tools
   { name: "Docker", level: "Intermediate", category: "DevOps", icon: "docker" },
   { name: "Git", level: "Advanced", category: "DevOps", icon: "git" },
   { name: "Linux", level: "Intermediate", category: "DevOps", icon: "linux" },
+  { name: "CI/CD Pipelines", level: "Intermediate", category: "DevOps", icon: "cicd" },
+  { name: "GitHub Actions", level: "Intermediate", category: "DevOps", icon: "github-actions" },
+  { name: "Terraform", level: "Intermediate", category: "DevOps", icon: "terraform" },
+  { name: "NGINX", level: "Intermediate", category: "DevOps", icon: "nginx" },
+  { name: "AWS", level: "Intermediate", category: "DevOps", icon: "aws" },
+  { name: "Azure", level: "Intermediate", category: "DevOps", icon: "azure" },
 
   // Networking
   { name: "Firewall Configuration", level: "Intermediate", category: "Networking", icon: "firewall" },
@@ -253,6 +285,9 @@ export const skills: Skill[] = [
   // Methodologies
   { name: "Agile Methodologies", level: "Advanced", category: "Other", icon: "agile" },
   { name: "API Development", level: "Advanced", category: "Backend", icon: "api" },
+  { name: "API Documentation (Swagger)", level: "Intermediate", category: "Other", icon: "swagger" },
+  { name: "Postman", level: "Intermediate", category: "Other", icon: "postman" },
+  { name: "Jest", level: "Intermediate", category: "Other", icon: "jest" },
   { name: "Testing", level: "Intermediate", category: "Other", icon: "testing" }
 ];
 
