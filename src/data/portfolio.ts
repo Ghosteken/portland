@@ -271,6 +271,7 @@ export const skills: Skill[] = [
   { name: "React", level: "Advanced", category: "Frontend", icon: "react" },
   { name: "TypeScript", level: "Advanced", category: "Frontend", icon: "typescript" },
   { name: "Node.js", level: "Advanced", category: "Backend", icon: "nodejs" },
+  { name: "NestJS", level: "Advanced", category: "Backend", icon: "nestjs" },
   { name: "Express.js", level: "Advanced", category: "Backend", icon: "express" },
   { name: "Python", level: "Advanced", category: "Backend", icon: "python" },
   { name: "JavaScript", level: "Advanced", category: "Frontend", icon: "javascript" },
