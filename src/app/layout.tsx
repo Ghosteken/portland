@@ -4,29 +4,34 @@ import './globals.css'
 import { ThemeProvider } from '@/components/theme-provider'
 import { Header } from '@/components/layout/header'
 import { Footer } from '@/components/layout/footer'
+import { PageTransition } from '@/components/layout/page-transition'
+import { cn } from "@/lib/utils";
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
-  title: 'Dante',
-  description: 'Software Engineer & Web3 Enthusiast - Portfolio showcasing my work, experience, and projects',
-  keywords: ['developer', 'portfolio', 'web3', 'react', 'nextjs', 'typescript'],
-  authors: [{ name: 'Nicholas' }],
-  creator: 'Nicholas',
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://ghosteken.vercel.app'),
+  title: {
+    default: 'Nicholas Aigberua | Software Engineer',
+    template: '%s | Nicholas Aigberua'
+  },
+  description: 'Software Engineer specializing in backend systems, APIs, and Web3 development. Portfolio of Nicholas Aigberua.',
+  keywords: ['Software Engineer', 'Backend Developer', 'Node.js', 'TypeScript', 'Python', 'Web3', 'Blockchain', 'Lagos', 'Nigeria'],
+  authors: [{ name: 'Nicholas Aigberua' }],
+  creator: 'Nicholas Aigberua',
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://yourportfolio.com',
-    title: 'Dante',
-    description: 'Software Engineer & Web3 Enthusiast',
-    siteName: 'Dante',
+    url: 'https://ghosteken.vercel.app',
+    title: 'Nicholas Aigberua | Software Engineer',
+    description: 'Software Engineer specializing in backend systems, APIs, and Web3 development.',
+    siteName: 'Nicholas Aigberua Portfolio',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Your Name - Portfolio',
-    description: 'Full Stack Developer & Web3 Enthusiast',
-    creator: '@dante_ieth',
+    title: 'Nicholas Aigberua | Software Engineer',
+    description: 'Software Engineer specializing in backend systems, APIs, and Web3 development.',
+    creator: '@Ghosteken',
   },
   robots: {
     index: true,
@@ -65,7 +70,9 @@ export default function RootLayout({
           <div className="min-h-screen flex flex-col">
             <Header />
             <main className="flex-1">
-              {children}
+              <PageTransition>
+                {children}
+              </PageTransition>
             </main>
             <Footer />
           </div>

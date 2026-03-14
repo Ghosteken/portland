@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import { MapPin, Calendar, Mail, Phone } from 'lucide-react'
 import { personalInfo } from '@/data/portfolio'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
 
 export default function About() {
 
@@ -20,51 +22,48 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Profile Section */}
           <div className="lg:col-span-1">
-            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8 sticky top-24">
-              <div className="text-center mb-6">
-                <div className="relative w-32 h-32 mx-auto mb-4">
+            <Card className="sticky top-24 hover:shadow-xl transition-shadow duration-300">
+              <CardHeader className="text-center">
+                <div className="relative w-32 h-32 mx-auto mb-4 group">
                   <Image
                     src={personalInfo.profileImage}
                     alt={personalInfo.name}
                     fill
-                    className="rounded-full object-cover"
+                    className="rounded-full object-cover border-4 border-primary/10 group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
-                <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                <CardTitle className="text-2xl font-bold">
                   {personalInfo.name}
-                </h2>
-                <p className="text-lg text-primary-600 mb-4">
+                </CardTitle>
+                <p className="text-lg text-primary font-medium">
                   {personalInfo.title}
                 </p>
-              </div>
-
-              <div className="space-y-4">
-                <div className="flex items-center gap-3 text-gray-600 dark:text-gray-300">
-                  <MapPin className="h-5 w-5 text-primary-600" />
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="flex items-center gap-3 text-muted-foreground">
+                  <MapPin className="h-5 w-5 text-primary" />
                   <span>{personalInfo.location}</span>
                 </div>
-                <div className="flex items-center gap-3 text-gray-600 dark:text-gray-300">
-                  <Mail className="h-5 w-5 text-primary-600" />
-                  <a href={`mailto:${personalInfo.email}`} className="hover:text-primary-600 transition-colors">
+                <div className="flex items-center gap-3 text-muted-foreground">
+                  <Mail className="h-5 w-5 text-primary" />
+                  <a href={`mailto:${personalInfo.email}`} className="hover:text-primary transition-colors">
                     {personalInfo.email}
                   </a>
                 </div>
                 {personalInfo.phone && (
-                  <div className="flex items-center gap-3 text-gray-600 dark:text-gray-300">
-                    <Phone className="h-5 w-5 text-primary-600" />
-                    <a href={`tel:${personalInfo.phone}`} className="hover:text-primary-600 transition-colors">
+                  <div className="flex items-center gap-3 text-muted-foreground">
+                    <Phone className="h-5 w-5 text-primary" />
+                    <a href={`tel:${personalInfo.phone}`} className="hover:text-primary transition-colors">
                       {personalInfo.phone}
                     </a>
                   </div>
                 )}
-                <div className="flex items-center gap-3 text-gray-600 dark:text-gray-300">
-                  <Calendar className="h-5 w-5 text-primary-600" />
+                <div className="flex items-center gap-3 text-muted-foreground">
+                  <Calendar className="h-5 w-5 text-primary" />
                   <span>Available for opportunities</span>
                 </div>
-              </div>
-
-
-            </div>
+              </CardContent>
+            </Card>
           </div>
 
           {/* Main Content */}

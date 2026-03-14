@@ -2,6 +2,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, MapPin, Calendar, Github, Linkedin, Twitter, Instagram } from 'lucide-react'
 import { personalInfo, socialLinks, workExperience } from '@/data/portfolio'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 
 
 export default function Home() {
@@ -167,25 +169,28 @@ export default function Home() {
               </h2>
             </div>
             
-            <div className="max-w-3xl mx-auto bg-white dark:bg-gray-900 rounded-lg shadow-md p-8">
-              <div className="text-center">
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                  {latestExperience.position}
-                </h3>
-                <p className="text-xl text-primary-600 mb-4">
-                  {latestExperience.company}
-                </p>
-                <p className="text-gray-600 dark:text-gray-300 mb-6">
-                  {latestExperience.description}
-                </p>
-                <Link
-                  href="/experience"
-                  className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-medium"
-                >
-                  View full experience
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
+            <div className="max-w-3xl mx-auto">
+              <Card className="hover:shadow-lg transition-shadow duration-300">
+                <CardHeader className="text-center">
+                  <CardTitle className="text-2xl font-bold">
+                    {latestExperience.position}
+                  </CardTitle>
+                  <p className="text-xl text-primary font-medium">
+                    {latestExperience.company}
+                  </p>
+                </CardHeader>
+                <CardContent className="text-center">
+                  <p className="text-muted-foreground mb-6">
+                    {latestExperience.description}
+                  </p>
+                  <Button asChild variant="outline">
+                    <Link href="/experience">
+                      View full experience
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </section>

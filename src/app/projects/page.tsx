@@ -1,6 +1,9 @@
 import Link from 'next/link'
 import { ExternalLink, Github } from 'lucide-react'
 import { projects } from '@/data/portfolio'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
 
 export default function Projects() {
 
@@ -24,82 +27,82 @@ export default function Projects() {
         {/* Projects List */}
         <div className="space-y-6">
           {projects.map((project, index) => (
-            <div
+            <Card
               key={project.id}
-              className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6 hover:shadow-xl hover:scale-105 transition-all duration-300 group"
+              className="hover:shadow-xl hover:scale-[1.02] transition-all duration-300 group overflow-hidden"
               style={{ animationDelay: `${index * 150}ms` }}
             >
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0">
-                  <Github className="h-8 w-8 text-blue-600 group-hover:text-blue-700 group-hover:scale-110 transition-all duration-300" />
+              <CardContent className="p-6">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <Github className="h-6 w-6 text-primary" />
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-start justify-between mb-3">
+                      <CardTitle className="text-xl font-semibold group-hover:text-primary transition-colors">
+                        {project.title}
+                      </CardTitle>
+                      <Badge variant="secondary">
+                        {project.category}
+                      </Badge>
+                    </div>
+                    <p className="text-muted-foreground mb-4 leading-relaxed">
+                      {project.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {project.technologies.map((tech) => (
+                        <Badge key={tech} variant="outline" className="bg-primary/5">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                    <div className="flex gap-3">
+                      {project.githubUrl && (
+                        <Button asChild variant="ghost" size="sm" className="gap-2">
+                          <Link href={project.githubUrl}>
+                            <Github className="h-4 w-4" />
+                            Code
+                          </Link>
+                        </Button>
+                      )}
+                      {project.liveUrl && (
+                        <Button asChild variant="outline" size="sm" className="gap-2 border-primary text-primary hover:bg-primary hover:text-white">
+                          <Link href={project.liveUrl}>
+                            <ExternalLink className="h-4 w-4" />
+                            Live Demo
+                          </Link>
+                        </Button>
+                      )}
+                    </div>
+                  </div>
                 </div>
-                <div className="flex-1">
-                  <div className="flex items-start justify-between mb-3">
-                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                      {project.title}
-                    </h3>
-                    <span className="text-sm text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full group-hover:bg-blue-100 dark:group-hover:bg-blue-900 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors">
-                      {project.category}
-                    </span>
-                  </div>
-                  <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.technologies.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-2 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 text-xs rounded-md font-medium"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="flex gap-3">
-                    {project.githubUrl && (
-                      <Link
-                        href={project.githubUrl}
-                        className="inline-flex items-center gap-1 text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600 transition-colors"
-                      >
-                        <Github className="h-4 w-4" />
-                        Code
-                      </Link>
-                    )}
-                    {project.liveUrl && (
-                      <Link
-                        href={project.liveUrl}
-                        className="inline-flex items-center gap-1 text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600 transition-colors"
-                      >
-                        <ExternalLink className="h-4 w-4" />
-                        Live Demo
-                      </Link>
-                    )}
-                  </div>
-                </div>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
           ))}
         </div>
 
         {/* Call to Action */}
         <div className="mt-16 text-center">
-          <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-8">
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-              Have a project in mind?
-            </h3>
-            <p className="text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
-              I'm always excited to work on new and challenging projects.
-              Let's discuss how we can bring your ideas to life.
-            </p>
-            <div className="flex justify-center">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors"
-              >
-                Get in touch
-              </Link>
-            </div>
-          </div>
+          <Card className="bg-muted/50 border-none p-8">
+            <CardHeader>
+              <CardTitle className="text-2xl font-bold">
+                Have a project in mind?
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+                I'm always excited to work on new and challenging projects.
+                Let's discuss how we can bring your ideas to life.
+              </p>
+              <Button asChild size="lg">
+                <Link href="/contact">
+                  Get in touch
+                </Link>
+              </Button>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </div>

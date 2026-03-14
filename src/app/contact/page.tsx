@@ -4,6 +4,10 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter, Instagram, MessageCircle, Clock, CheckCircle } from 'lucide-react'
 import { personalInfo, socialLinks } from '@/data/portfolio'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Textarea } from '@/components/ui/textarea'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -73,21 +77,22 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Contact Information */}
           <div className="lg:col-span-1">
-            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8 sticky top-24 hover:shadow-xl transition-shadow duration-300">
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-                Contact Information
-              </h2>
-              
-              <div className="space-y-6">
-                <div className="flex items-start gap-4 p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors group">
-                  <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                    <Mail className="h-6 w-6 text-blue-600 group-hover:text-blue-700 transition-colors" />
+            <Card className="sticky top-24 hover:shadow-xl transition-shadow duration-300">
+              <CardHeader>
+                <CardTitle className="text-2xl font-bold">
+                  Contact Information
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="flex items-start gap-4 p-3 rounded-lg hover:bg-muted transition-colors group">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                    <Mail className="h-6 w-6 text-primary group-hover:text-primary/80 transition-colors" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 dark:text-white mb-1">Email</h3>
+                    <h3 className="font-semibold mb-1 text-foreground">Email</h3>
                     <a
                       href={`mailto:${personalInfo.email}`}
-                      className="text-gray-600 dark:text-gray-300 hover:text-blue-600 transition-colors"
+                      className="text-muted-foreground hover:text-primary transition-colors"
                     >
                       {personalInfo.email}
                     </a>
@@ -95,15 +100,15 @@ export default function Contact() {
                 </div>
 
                 {personalInfo.phone && (
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Phone className="h-6 w-6 text-primary-600" />
+                  <div className="flex items-start gap-4 p-3 rounded-lg hover:bg-muted transition-colors group">
+                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                      <Phone className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-gray-900 dark:text-white mb-1">Phone</h3>
+                      <h3 className="font-semibold mb-1 text-foreground">Phone</h3>
                       <a 
                         href={`tel:${personalInfo.phone}`}
-                        className="text-gray-600 dark:text-gray-300 hover:text-primary-600 transition-colors"
+                        className="text-muted-foreground hover:text-primary transition-colors"
                       >
                         {personalInfo.phone}
                       </a>
@@ -111,177 +116,175 @@ export default function Contact() {
                   </div>
                 )}
 
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <MapPin className="h-6 w-6 text-primary-600" />
+                <div className="flex items-start gap-4 p-3 rounded-lg hover:bg-muted transition-colors group">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                    <MapPin className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 dark:text-white mb-1">Location</h3>
-                    <p className="text-gray-600 dark:text-gray-300">
+                    <h3 className="font-semibold mb-1 text-foreground">Location</h3>
+                    <p className="text-muted-foreground">
                       {personalInfo.location}
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Clock className="h-6 w-6 text-primary-600" />
+                <div className="flex items-start gap-4 p-3 rounded-lg hover:bg-muted transition-colors group">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                    <Clock className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 dark:text-white mb-1">Response Time</h3>
-                    <p className="text-gray-600 dark:text-gray-300">
+                    <h3 className="font-semibold mb-1 text-foreground">Response Time</h3>
+                    <p className="text-muted-foreground">
                       Usually within 24 hours
                     </p>
                   </div>
                 </div>
-              </div>
 
-              {/* Social Links */}
-              <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
-                <h3 className="font-semibold text-gray-900 dark:text-white mb-4">
-                  Connect on Social Media
-                </h3>
-                <div className="flex gap-4">
-                  {socialLinks.map((link) => {
-                    const IconComponent = socialIcons[link.icon as keyof typeof socialIcons]
-                    const iconColors = {
-                      github: "text-gray-800 dark:text-white hover:text-gray-900 dark:hover:text-gray-100",
-                      linkedin: "text-blue-600 hover:text-blue-700",
-                      twitter: "text-blue-400 hover:text-blue-500",
-                      instagram: "text-pink-500 hover:text-pink-600",
-                    }
-                    const colorClass = iconColors[link.icon as keyof typeof iconColors]
-                    if (!IconComponent) return null
+                {/* Social Links */}
+                <div className="pt-8 border-t">
+                  <h3 className="font-semibold mb-4 text-foreground">
+                    Connect on Social Media
+                  </h3>
+                  <div className="flex gap-4">
+                    {socialLinks.map((link) => {
+                      const IconComponent = socialIcons[link.icon as keyof typeof socialIcons]
+                      if (!IconComponent) return null
 
-                    return (
-                      <Link
-                        key={link.platform}
-                        href={link.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-10 h-10 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
-                      >
-                        <IconComponent className={`h-5 w-5 ${colorClass} transition-colors`} />
-                      </Link>
-                    )
-                  })}
+                      return (
+                        <Button
+                          key={link.platform}
+                          variant="outline"
+                          size="icon"
+                          asChild
+                          className="hover:text-primary hover:border-primary transition-colors"
+                        >
+                          <Link
+                            href={link.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <IconComponent className="h-5 w-5" />
+                          </Link>
+                        </Button>
+                      )
+                    })}
+                  </div>
                 </div>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
           </div>
 
           {/* Contact Form */}
           <div className="lg:col-span-2">
-            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8 hover:shadow-xl transition-shadow duration-300">
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-                Send me a message
-              </h2>
-
-              {isSubmitted ? (
-                <div className="text-center py-12">
-                  <div className="w-16 h-16 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <CheckCircle className="h-8 w-8 text-green-600" />
+            <Card className="hover:shadow-xl transition-shadow duration-300">
+              <CardHeader>
+                <CardTitle className="text-2xl font-bold">
+                  Send me a message
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                {isSubmitted ? (
+                  <div className="text-center py-12">
+                    <div className="w-16 h-16 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <CheckCircle className="h-8 w-8 text-green-600" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                      Message sent successfully!
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-300 mb-6">
+                      Thank you for reaching out. I'll get back to you as soon as possible.
+                    </p>
+                    <Button
+                      variant="link"
+                      onClick={() => setIsSubmitted(false)}
+                      className="text-primary hover:text-primary/80"
+                    >
+                      Send another message
+                    </Button>
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-                    Message sent successfully!
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-300 mb-6">
-                    Thank you for reaching out. I'll get back to you as soon as possible.
-                  </p>
-                  <button
-                    onClick={() => setIsSubmitted(false)}
-                    className="text-primary-600 hover:text-primary-700 font-medium"
-                  >
-                    Send another message
-                  </button>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                        Name *
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <label htmlFor="name" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                          Name *
+                        </label>
+                        <Input
+                          id="name"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleChange}
+                          required
+                          placeholder="Your full name"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <label htmlFor="email" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                          Email *
+                        </label>
+                        <Input
+                          type="email"
+                          id="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          required
+                          placeholder="your.email@example.com"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      <label htmlFor="subject" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                        Subject *
                       </label>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
+                      <Input
+                        id="subject"
+                        name="subject"
+                        value={formData.subject}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                        placeholder="Your full name"
+                        placeholder="What's this about?"
                       />
                     </div>
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                        Email *
+
+                    <div className="space-y-2">
+                      <label htmlFor="message" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                        Message *
                       </label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
+                      <Textarea
+                        id="message"
+                        name="message"
+                        value={formData.message}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                        placeholder="your.email@example.com"
+                        rows={6}
+                        placeholder="Tell me about your project, question, or just say hello..."
+                        className="resize-none"
                       />
                     </div>
-                  </div>
 
-                  <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                      Subject *
-                    </label>
-                    <input
-                      type="text"
-                      id="subject"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                      placeholder="What's this about?"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                      Message *
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                      rows={6}
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white resize-none"
-                      placeholder="Tell me about your project, question, or just say hello..."
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white px-6 py-4 rounded-lg font-medium transition-colors shadow-md hover:shadow-lg border-2 border-blue-600 hover:border-blue-700 text-lg"
-                  >
-                    {isSubmitting ? (
-                      <>
-                        <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                        Sending...
-                      </>
-                    ) : (
-                      <>
-                        <Send className="h-4 w-4" />
-                        Send Message
-                      </>
-                    )}
-                  </button>
-                </form>
-              )}
-            </div>
+                    <Button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full text-lg h-12 gap-2"
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <div className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" />
+                          Sending...
+                        </>
+                      ) : (
+                        <>
+                          <Send className="h-4 w-4" />
+                          Send Message
+                        </>
+                      )}
+                    </Button>
+                  </form>
+                )}
+              </CardContent>
+            </Card>
           </div>
         </div>
 

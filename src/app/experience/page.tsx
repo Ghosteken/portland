@@ -1,6 +1,8 @@
 import { Calendar, MapPin, ExternalLink, Award, GraduationCap, CheckCircle } from 'lucide-react'
 import { workExperience, education, certificates } from '@/data/portfolio'
 import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
 
 export default function Experience() {
   const formatDate = (dateString: string) => {
@@ -58,88 +60,91 @@ export default function Experience() {
                 
                 {/* Content */}
                 <div className="ml-20">
-                  <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8 hover:shadow-lg transition-shadow">
-                    {/* Header */}
-                    <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
-                      <div className="flex-1">
-                        <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                          {experience.position}
-                        </h3>
-                        <div className="flex items-center gap-2 text-lg text-primary-600 mb-3">
-                          <span>{experience.company}</span>
-                          {experience.logo && (
-                            <ExternalLink className="h-4 w-4" />
-                          )}
-                        </div>
-                        <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-sm text-gray-500 dark:text-gray-400">
-                          <div className="flex items-center gap-1">
-                            <Calendar className="h-4 w-4" />
-                            <span>
-                              {formatDate(experience.startDate)} - {' '}
-                              {experience.endDate ? formatDate(experience.endDate) : 'Present'}
-                            </span>
+                  <Card className="hover:shadow-lg transition-shadow duration-300">
+                    <CardContent className="p-8">
+                      {/* Header */}
+                      <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
+                        <div className="flex-1">
+                          <CardTitle className="text-2xl font-bold mb-2">
+                            {experience.position}
+                          </CardTitle>
+                          <div className="flex items-center gap-2 text-lg text-primary font-medium mb-3">
+                            <span>{experience.company}</span>
+                            {experience.logo && (
+                              <ExternalLink className="h-4 w-4" />
+                            )}
                           </div>
-                          <div className="flex items-center gap-1">
-                            <span>•</span>
-                            <span>{calculateDuration(experience.startDate, experience.endDate)}</span>
+                          <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-sm text-muted-foreground">
+                            <div className="flex items-center gap-1">
+                              <Calendar className="h-4 w-4" />
+                              <span>
+                                {formatDate(experience.startDate)} - {' '}
+                                {experience.endDate ? formatDate(experience.endDate) : 'Present'}
+                              </span>
+                            </div>
+                            <div className="flex items-center gap-1">
+                              <span>•</span>
+                              <span>{calculateDuration(experience.startDate, experience.endDate)}</span>
+                            </div>
                           </div>
                         </div>
+                        
+                        {!experience.endDate && (
+                          <div className="mt-4 md:mt-0">
+                            <Badge variant="secondary" className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 hover:bg-green-100">
+                              Current Role
+                            </Badge>
+                          </div>
+                        )}
                       </div>
-                      
-                      {!experience.endDate && (
-                        <div className="mt-4 md:mt-0">
-                          <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
-                            Current Role
-                          </span>
+
+                      {/* Description */}
+                      <div className="mb-6">
+                        <p className="text-muted-foreground leading-relaxed">
+                          {experience.description}
+                        </p>
+                      </div>
+
+                      {/* Achievements */}
+                      {experience.achievements && experience.achievements.length > 0 && (
+                        <div className="mb-6">
+                          <h4 className="text-lg font-semibold mb-3 flex items-center gap-2">
+                            <Award className="h-5 w-5 text-primary" />
+                            Key Achievements
+                          </h4>
+                          <ul className="space-y-2">
+                            {experience.achievements.map((achievement, achievementIndex) => (
+                              <li 
+                                key={achievementIndex}
+                                className="flex items-start gap-3 text-muted-foreground"
+                              >
+                                <span className="text-primary mt-1.5">•</span>
+                                <span>{achievement}</span>
+                              </li>
+                            ))}
+                          </ul>
                         </div>
                       )}
-                    </div>
 
-                    {/* Description */}
-                    <div className="mb-6">
-                      <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                        {experience.description}
-                      </p>
-                    </div>
-
-                    {/* Achievements */}
-                    {experience.achievements && experience.achievements.length > 0 && (
-                      <div className="mb-6">
-                        <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
-                          <Award className="h-5 w-5 text-primary-600" />
-                          Key Achievements
+                      {/* Technologies */}
+                      <div>
+                        <h4 className="text-lg font-semibold mb-3">
+                          Technologies Used
                         </h4>
-                        <ul className="space-y-2">
-                          {experience.achievements.map((achievement, achievementIndex) => (
-                            <li 
-                              key={achievementIndex}
-                              className="flex items-start gap-3 text-gray-600 dark:text-gray-300"
+                        <div className="flex flex-wrap gap-2">
+                          {experience.technologies.map((tech) => (
+                            <Badge
+                              key={tech}
+                              variant="outline"
+                              className="bg-primary/5"
                             >
-                              <span className="text-primary-600 mt-1.5">•</span>
-                              <span>{achievement}</span>
-                            </li>
+                              {tech}
+                            </Badge>
                           ))}
-                        </ul>
+                        </div>
                       </div>
-                    )}
-
-                    {/* Technologies */}
-                    <div>
-                      <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                        Technologies Used
-                      </h4>
-                      <div className="flex flex-wrap gap-2">
-                        {experience.technologies.map((tech) => (
-                          <span
-                            key={tech}
-                            className="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 text-sm rounded-full font-medium"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
+                    </CardContent>
+                  </Card>
                 </div>
               </div>
             ))}
@@ -148,24 +153,26 @@ export default function Experience() {
 
         {/* Call to Action */}
         <div className="mt-16 text-center">
-          <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-8">
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-              Interested in working together?
-            </h3>
-            <p className="text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
-              I'm always open to discussing new opportunities and exciting projects. 
-              Let's connect and see how we can create something amazing together.
-            </p>
-            <div className="flex justify-center">
-              <a
-                href="/documents/resume.pdf"
-                download
-                className="inline-flex items-center justify-center px-6 py-3 border border-gray-300 dark:border-gray-600 text-base font-medium rounded-md text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
-              >
-                Download Resume
-              </a>
-            </div>
-          </div>
+          <Card className="bg-muted/50 border-none p-8">
+            <CardHeader>
+              <CardTitle className="text-2xl font-bold">
+                Interested in working together?
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+                I'm always open to discussing new opportunities and exciting projects. 
+                Let's connect and see how we can create something amazing together.
+              </p>
+              <div className="flex justify-center">
+                <Button asChild size="lg" variant="outline" className="gap-2">
+                  <a href="/documents/resume.pdf" download>
+                    Download Resume
+                  </a>
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </div>

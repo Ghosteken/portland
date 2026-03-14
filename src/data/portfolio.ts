@@ -229,6 +229,27 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/Ghosteken/chat-app",
     featured: true,
     category: "web"
+  },
+  {
+    id: "7",
+    title: "Inveco",
+    description: "Hire Expert Freelancers. Get Work Done. (Backend connection pending)",
+    technologies: ["React", "Next.js", "Tailwind CSS", "TypeScript"],
+    images: [],
+    liveUrl: "https://inveco-client.vercel.app/",
+    featured: true,
+    category: "web"
+  },
+  {
+    id: "8",
+    title: "StockStudio",
+    description: "Inventory and Sales Management. Track products, manage invoices, and get actionable insights. Fast, simple, and ready for multi-store operations. (Backend in development)",
+    longDescription: "A SaaS application with complex ERP features. Track products, manage invoices, and get actionable insights. Fast, simple, and ready for multi-store operations.",
+    technologies: ["React", "Next.js", "Tailwind CSS", "TypeScript", "ERP", "SaaS"],
+    images: [],
+    liveUrl: "https://stockstudio.vercel.app/",
+    featured: true,
+    category: "web"
   }
 ];
 
@@ -299,15 +320,15 @@ export const web3Experience: Web3Experience = {
   socialLinks: [
     {
       platform: "Mirror",
-      url: "https://mirror.xyz/yourusername",
+      url: "https://mirror.xyz/ghosteken.eth",
       icon: "mirror",
-      username: "yourusername"
+      username: "ghosteken"
     },
     {
       platform: "Lens Protocol",
-      url: "https://lenster.xyz/u/yourusername",
+      url: "https://lenster.xyz/u/ghosteken",
       icon: "lens",
-      username: "yourusername"
+      username: "ghosteken"
     }
   ]
 };
@@ -317,7 +338,15 @@ export const blogPosts: BlogPost[] = [
     id: "1",
     title: "Getting Started with Web3 Development",
     excerpt: "A comprehensive guide to building your first decentralized application",
-    content: "Full blog post content here...",
+    content: `Web3 development is more than just writing smart contracts; it's about building a decentralized future. In this guide, we'll explore the fundamental concepts of blockchain, how decentralized applications (dApps) work, and how you can start your journey as a Web3 developer.
+
+We'll cover:
+1. Understanding the Blockchain
+2. Smart Contracts and Solidity
+3. Connecting to the Ethereum Network
+4. Building your first dApp frontend with Ethers.js
+
+Whether you're a seasoned web developer or a complete beginner, this guide will provide you with the tools and knowledge you need to get started.`,
     publishDate: "2023-10-15",
     tags: ["Web3", "Blockchain", "Tutorial"],
     readTime: 8,

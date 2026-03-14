@@ -1,23 +1,29 @@
 import Link from 'next/link'
-import { Coins, BookOpen, Users, ExternalLink } from 'lucide-react'
+import { Coins, BookOpen, Users, ExternalLink, Shield, Cpu, Globe } from 'lucide-react'
+import { web3Experience } from '@/data/portfolio'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
 
 export default function Web3() {
-  const blockchains = [
-    { name: 'Ethereum', icon: '⟠', color: 'text-blue-500' },
-    { name: 'Polygon', icon: '⬟', color: 'text-purple-500' },
-    { name: 'Binance Smart Chain', icon: '🔶', color: 'text-yellow-500' },
-    { name: 'Solana', icon: '◎', color: 'text-green-500' },
-    { name: 'Cardano', icon: '₳', color: 'text-blue-600' },
-    { name: 'Avalanche', icon: '🔺', color: 'text-red-500' }
-  ]
-  const defiProtocols = [
-    { name: 'Uniswap', icon: '🦄', color: 'text-pink-500', url: 'https://app.uniswap.org' },
-    { name: 'Aave', icon: '👻', color: 'text-purple-600', url: 'https://app.aave.com' },
-    { name: 'Compound', icon: '🏛️', color: 'text-green-600', url: 'https://app.compound.finance' },
-    { name: 'MakerDAO', icon: '🏭', color: 'text-orange-500', url: 'https://makerdao.com' },
-    { name: 'Curve', icon: '🌊', color: 'text-blue-400', url: 'https://curve.fi' },
-    { name: 'SushiSwap', icon: '🍣', color: 'text-red-400', url: 'https://app.sushi.com' }
-  ]
+  const blockchainIcons: Record<string, string> = {
+    'Ethereum': '⟠',
+    'Polygon': '⬟',
+    'Binance Smart Chain': '🔶',
+    'Solana': '◎',
+    'Cardano': '₳',
+    'Avalanche': '🔺'
+  }
+
+  const protocolIcons: Record<string, string> = {
+    'Uniswap': '🦄',
+    'Aave': '👻',
+    'Compound': '🏛️',
+    'MakerDAO': '🏭',
+    'Curve': '🌊',
+    'SushiSwap': '🍣'
+  }
+
   const learningAreas = [
     'Blockchain fundamentals and consensus mechanisms',
     'DeFi protocols and yield farming strategies',
@@ -44,66 +50,100 @@ export default function Web3() {
         </div>
 
         <div className="mb-16">
-          <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-8 text-center">
-            Current Learning Focus
+          <h2 className="text-2xl font-semibold mb-8 text-center">
+            Learning Focus
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {learningAreas.map((area, index) => (
-              <div key={index} className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6 hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer group">
-                <div className="flex items-start gap-3">
-                  <BookOpen className="h-5 w-5 text-blue-600 mt-1 flex-shrink-0 group-hover:text-blue-700 transition-colors" />
-                  <p className="text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{area}</p>
-                </div>
-              </div>
+              <Card key={index} className="hover:shadow-lg hover:scale-[1.02] transition-all duration-300 group cursor-pointer">
+                <CardContent className="p-6 flex items-start gap-3">
+                  <Shield className="h-5 w-5 text-primary mt-1 flex-shrink-0 group-hover:scale-110 transition-transform" />
+                  <p className="group-hover:text-primary transition-colors">{area}</p>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
 
         <div className="mb-16">
-          <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-8 text-center">
-            Blockchain Networks I'm Exploring
+          <h2 className="text-2xl font-semibold mb-8 text-center">
+            Blockchain Networks
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {blockchains.map((blockchain, index) => (
-              <div
-                key={blockchain.name}
-                className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-4 hover:shadow-xl hover:scale-110 transition-all duration-300 cursor-pointer group"
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {web3Experience.blockchains.map((name, index) => (
+              <Card
+                key={name}
+                className="hover:shadow-lg hover:scale-105 transition-all duration-300 group cursor-pointer"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className="flex items-center gap-3">
-                  <span className={`text-2xl ${blockchain.color} group-hover:scale-125 transition-transform duration-300`}>{blockchain.icon}</span>
-                  <span className="text-gray-900 dark:text-white font-medium group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{blockchain.name}</span>
-                </div>
-              </div>
+                <CardContent className="p-4 flex items-center gap-3">
+                  <span className="text-2xl group-hover:scale-125 transition-transform duration-300">
+                    {blockchainIcons[name] || '🌐'}
+                  </span>
+                  <span className="font-medium group-hover:text-primary transition-colors">
+                    {name}
+                  </span>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
 
         <div className="mb-16">
-          <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-8 text-center">
-            DeFi Protocols I'm Learning About
+          <h2 className="text-2xl font-semibold mb-8 text-center">
+            Protocols & Tools
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {defiProtocols.map((protocol, index) => (
-              <Link
-                key={protocol.name}
-                href={protocol.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-4 hover:shadow-xl hover:scale-110 transition-all duration-300 cursor-pointer group hover:border-blue-300 dark:hover:border-blue-600 block"
-                style={{ animationDelay: `${index * 150}ms` }}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {web3Experience.protocols.map((name, index) => (
+              <Card
+                key={name}
+                className="hover:shadow-lg hover:scale-105 transition-all duration-300 group cursor-pointer"
               >
-                <div className="flex items-center justify-between">
+                <CardContent className="p-6 flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <span className={`text-2xl ${protocol.color} group-hover:scale-125 transition-transform duration-300`}>{protocol.icon}</span>
-                    <span className="text-gray-900 dark:text-white font-medium group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{protocol.name}</span>
+                    <span className="text-2xl group-hover:scale-125 transition-transform duration-300">
+                      {protocolIcons[name] || '⚙️'}
+                    </span>
+                    <span className="font-medium group-hover:text-primary transition-colors">
+                      {name}
+                    </span>
                   </div>
-                  <ExternalLink className="h-4 w-4 text-gray-400 group-hover:text-blue-600 transition-colors" />
-                </div>
-              </Link>
+                </CardContent>
+              </Card>
+            ))}
+            {web3Experience.tools.map((name) => (
+              <Card
+                key={name}
+                className="hover:shadow-lg hover:scale-105 transition-all duration-300 group cursor-pointer border-dashed"
+              >
+                <CardContent className="p-6 flex items-center gap-3">
+                  <Cpu className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                  <span className="font-medium group-hover:text-primary transition-colors">
+                    {name}
+                  </span>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
+
+        {web3Experience.socialLinks && web3Experience.socialLinks.length > 0 && (
+          <div className="mb-16">
+            <h2 className="text-2xl font-semibold mb-8 text-center">
+              Web3 Presence
+            </h2>
+            <div className="flex justify-center gap-4">
+              {web3Experience.socialLinks.map((link) => (
+                <Button key={link.platform} asChild variant="outline" className="gap-2">
+                  <Link href={link.url} target="_blank" rel="noopener noreferrer">
+                    <Globe className="h-4 w-4" />
+                    {link.platform}
+                  </Link>
+                </Button>
+              ))}
+            </div>
+          </div>
+        )}
 
         <div className="text-center">
           <div className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-900 rounded-lg p-8 hover:shadow-xl transition-all duration-300 group">
