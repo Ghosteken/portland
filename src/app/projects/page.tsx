@@ -93,8 +93,8 @@ export default function Projects() {
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-                I'm always excited to work on new and challenging projects.
-                Let's discuss how we can bring your ideas to life.
+                I&apos;m always excited to work on new and challenging projects.
+                Let&apos;s discuss how we can bring your ideas to life.
               </p>
               <Button asChild size="lg">
                 <Link href="/contact">

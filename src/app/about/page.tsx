@@ -78,12 +78,12 @@ export default function About() {
                   {personalInfo.bio}
                 </p>
                 <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
-                  I'm passionate about creating innovative solutions that solve real-world problems. 
+                  I&apos;m passionate about creating innovative solutions that solve real-world problems. 
                   My journey in technology started with curiosity about how things work, and it has 
                   evolved into a career focused on building scalable, user-friendly applications.
                 </p>
                 <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                  When I'm not coding, you can find me exploring new technologies, contributing to 
+                  When I&apos;m not coding, you can find me exploring new technologies, contributing to 
                   open-source projects, or sharing my knowledge through blog posts and community 
                   involvement. I believe in continuous learning and staying up-to-date with the 
                   latest industry trends.

@@ -275,7 +275,7 @@ export default function Resume() {
         {/* Print Instructions */}
         <div className="mt-6 text-center text-sm text-gray-500 dark:text-gray-400 print:hidden">
           <p>
-            To print this resume, use your browser's print function (Ctrl+P / Cmd+P) or download the PDF version above.
+            To print this resume, use your browser&apos;s print function (Ctrl+P / Cmd+P) or download the PDF version above.
           </p>
         </div>
       </div>

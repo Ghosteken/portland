@@ -47,7 +47,7 @@ export default function Education() {
           <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gray-200 dark:bg-gray-700"></div>
           
           <div className="space-y-12">
-            {education.map((edu, index) => (
+            {education.map((edu) => (
               <div key={edu.id} className="relative">
                 {/* Timeline dot */}
                 <div className="absolute left-6 w-4 h-4 bg-primary rounded-full border-4 border-white dark:border-gray-900 shadow-md"></div>
@@ -100,59 +100,60 @@ export default function Education() {
                         )}
                       </div>
 
-                    {/* Achievements */}
-                    {edu.achievements && edu.achievements.length > 0 && (
-                      <div className="mb-6">
-                        <h4 className="text-lg font-semibold mb-3 flex items-center gap-2">
-                          <Award className="h-5 w-5 text-primary" />
-                          Achievements & Honors
-                        </h4>
-                        <ul className="space-y-2">
-                          {edu.achievements.map((achievement, achievementIndex) => (
-                            <li 
-                              key={achievementIndex}
-                              className="flex items-start gap-3 text-muted-foreground"
-                            >
-                              <span className="text-primary mt-1.5">•</span>
-                              <span>{achievement}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
+                      {/* Achievements */}
+                      {edu.achievements && edu.achievements.length > 0 && (
+                        <div className="mb-6">
+                          <h4 className="text-lg font-semibold mb-3 flex items-center gap-2">
+                            <Award className="h-5 w-5 text-primary" />
+                            Achievements & Honors
+                          </h4>
+                          <ul className="space-y-2">
+                            {edu.achievements.map((achievement, achievementIndex) => (
+                              <li 
+                                key={achievementIndex}
+                                className="flex items-start gap-3 text-muted-foreground"
+                              >
+                                <span className="text-primary mt-1.5">•</span>
+                                <span>{achievement}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
 
-                    {/* Relevant Coursework */}
-                    <div>
-                      <h4 className="text-lg font-semibold mb-3 flex items-center gap-2">
-                        <BookOpen className="h-5 w-5 text-primary" />
-                        Relevant Coursework
-                      </h4>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                        {[
-                          'Data Structures & Algorithms',
-                          'Software Engineering',
-                          'Database Systems',
-                          'Computer Networks',
-                          'Web Development',
-                          'Mobile App Development',
-                          'Machine Learning',
-                          'Cybersecurity'
-                        ].map((course) => (
-                          <div
-                            key={course}
-                            className="flex items-center gap-2 text-muted-foreground"
-                          >
-                            <span className="w-2 h-2 bg-primary rounded-full"></span>
-                            <span>{course}</span>
-                          </div>
-                        ))}
+                      {/* Relevant Coursework */}
+                      <div>
+                        <h4 className="text-lg font-semibold mb-3 flex items-center gap-2">
+                          <BookOpen className="h-5 w-5 text-primary" />
+                          Relevant Coursework
+                        </h4>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                          {[
+                            'Data Structures & Algorithms',
+                            'Software Engineering',
+                            'Database Systems',
+                            'Computer Networks',
+                            'Web Development',
+                            'Mobile App Development',
+                            'Machine Learning',
+                            'Cybersecurity'
+                          ].map((course) => (
+                            <div
+                              key={course}
+                              className="flex items-center gap-2 text-muted-foreground"
+                            >
+                              <span className="w-2 h-2 bg-primary rounded-full"></span>
+                              <span>{course}</span>
+                            </div>
+                          ))}
+                        </div>
                       </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                    </CardContent>
+                  </Card>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
         {/* Additional Education */}
@@ -227,11 +228,11 @@ export default function Education() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Education doesn't stop at graduation. I'm committed to continuous learning 
-                and staying current with the latest technologies and best practices.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+                  Education doesn&apos;t stop at graduation. I&apos;m committed to continuous learning 
+                  and staying current with the latest technologies and best practices.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild size="lg" className="gap-2">
                   <Link href="/certificates">
                     View Certificates

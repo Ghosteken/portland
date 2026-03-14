@@ -70,7 +70,7 @@ export default function Contact() {
             Get In Touch
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            I'd love to hear from you. Send me a message and I'll respond as soon as possible.
+            I&apos;d love to hear from you. Send me a message and I&apos;ll respond as soon as possible.
           </p>
         </div>
 
@@ -192,7 +192,7 @@ export default function Contact() {
                       Message sent successfully!
                     </h3>
                     <p className="text-gray-600 dark:text-gray-300 mb-6">
-                      Thank you for reaching out. I'll get back to you as soon as possible.
+                      Thank you for reaching out. I&apos;ll get back to you as soon as possible.
                     </p>
                     <Button
                       variant="link"
@@ -297,7 +297,7 @@ export default function Contact() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md">
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                What's the best way to reach you?
+                What&apos;s the best way to reach you?
               </h3>
               <p className="text-gray-600 dark:text-gray-300">
                 Email is usually the best way to reach me. I check my email regularly and typically respond within 24 hours.
@@ -309,7 +309,7 @@ export default function Contact() {
                 Are you available for freelance work?
               </h3>
               <p className="text-gray-600 dark:text-gray-300">
-                Yes! I'm always interested in discussing new projects and opportunities. Feel free to reach out with your project details.
+                Yes! I&apos;m always interested in discussing new projects and opportunities. Feel free to reach out with your project details.
               </p>
             </div>
             

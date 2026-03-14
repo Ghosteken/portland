@@ -152,7 +152,7 @@ export default function Web3() {
               Continuous Learning Journey
             </h3>
             <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
-              I'm passionate about understanding the Web3 ecosystem, from blockchain fundamentals to DeFi innovations.
+              I&apos;m passionate about understanding the Web3 ecosystem, from blockchain fundamentals to DeFi innovations.
               Always exploring new protocols, learning about tokenomics, and staying updated with the latest developments in the space.
             </p>
           </div>

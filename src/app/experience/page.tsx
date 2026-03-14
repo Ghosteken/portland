@@ -161,8 +161,8 @@ export default function Experience() {
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-                I'm always open to discussing new opportunities and exciting projects. 
-                Let's connect and see how we can create something amazing together.
+                I&apos;m always open to discussing new opportunities and exciting projects. 
+                Let&apos;s connect and see how we can create something amazing together.
               </p>
               <div className="flex justify-center">
                 <Button asChild size="lg" variant="outline" className="gap-2">

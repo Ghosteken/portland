@@ -5,6 +5,7 @@ import { certificates } from '@/data/portfolio'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
+import { cn } from '@/lib/utils'
 
 export default function Certificates() {
   const formatDate = (dateString: string) => {
