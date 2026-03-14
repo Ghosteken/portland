@@ -1,5 +1,8 @@
 import { Calendar, Award, GraduationCap, BookOpen } from 'lucide-react'
 import { education } from '@/data/portfolio'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import Link from 'next/link'
 
 export default function Education() {
   const formatDate = (dateString: string) => {
@@ -47,69 +50,70 @@ export default function Education() {
             {education.map((edu, index) => (
               <div key={edu.id} className="relative">
                 {/* Timeline dot */}
-                <div className="absolute left-6 w-4 h-4 bg-primary-600 rounded-full border-4 border-white dark:border-gray-900 shadow-md"></div>
+                <div className="absolute left-6 w-4 h-4 bg-primary rounded-full border-4 border-white dark:border-gray-900 shadow-md"></div>
                 
                 {/* Content */}
                 <div className="ml-20">
-                  <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8 hover:shadow-lg transition-shadow">
-                    {/* Header */}
-                    <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
-                      <div className="flex-1">
-                        <div className="flex items-center gap-3 mb-2">
-                          <GraduationCap className="h-6 w-6 text-primary-600" />
-                          <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
-                            {edu.degree}
-                          </h3>
-                        </div>
-                        <p className="text-lg text-gray-600 dark:text-gray-300 mb-2">
-                          {edu.field}
-                        </p>
-                        <div className="flex items-center gap-2 text-lg text-primary-600 mb-3">
-                          <span>{edu.institution}</span>
-                        </div>
-                        <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-sm text-gray-500 dark:text-gray-400">
-                          <div className="flex items-center gap-1">
-                            <Calendar className="h-4 w-4" />
-                            <span>
-                              {formatDate(edu.startDate)} - {' '}
-                              {edu.endDate ? formatDate(edu.endDate) : 'Present'}
-                            </span>
+                  <Card className="hover:shadow-lg transition-shadow duration-300">
+                    <CardContent className="p-8">
+                      {/* Header */}
+                      <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
+                        <div className="flex-1">
+                          <div className="flex items-center gap-3 mb-2">
+                            <GraduationCap className="h-6 w-6 text-primary" />
+                            <CardTitle className="text-2xl font-bold">
+                              {edu.degree}
+                            </CardTitle>
                           </div>
-                          <div className="flex items-center gap-1">
-                            <span>•</span>
-                            <span>{calculateDuration(edu.startDate, edu.endDate)}</span>
+                          <p className="text-lg text-muted-foreground mb-2">
+                            {edu.field}
+                          </p>
+                          <div className="flex items-center gap-2 text-lg text-primary font-medium mb-3">
+                            <span>{edu.institution}</span>
+                          </div>
+                          <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-sm text-muted-foreground">
+                            <div className="flex items-center gap-1">
+                              <Calendar className="h-4 w-4" />
+                              <span>
+                                {formatDate(edu.startDate)} - {' '}
+                                {edu.endDate ? formatDate(edu.endDate) : 'Present'}
+                              </span>
+                            </div>
+                            <div className="flex items-center gap-1">
+                              <span>•</span>
+                              <span>{calculateDuration(edu.startDate, edu.endDate)}</span>
+                            </div>
                           </div>
                         </div>
+                        
+                        {edu.gpa && (
+                          <div className="mt-4 md:mt-0">
+                            <div className="bg-primary/10 rounded-lg p-3 text-center">
+                              <div className="text-2xl font-bold text-primary">
+                                {edu.gpa}
+                              </div>
+                              <div className="text-xs text-muted-foreground">
+                                GPA
+                              </div>
+                            </div>
+                          </div>
+                        )}
                       </div>
-                      
-                      {edu.gpa && (
-                        <div className="mt-4 md:mt-0">
-                          <div className="bg-primary-100 dark:bg-primary-900 rounded-lg p-3 text-center">
-                            <div className="text-2xl font-bold text-primary-800 dark:text-primary-200">
-                              {edu.gpa}
-                            </div>
-                            <div className="text-xs text-primary-600 dark:text-primary-400">
-                              GPA
-                            </div>
-                          </div>
-                        </div>
-                      )}
-                    </div>
 
                     {/* Achievements */}
                     {edu.achievements && edu.achievements.length > 0 && (
                       <div className="mb-6">
-                        <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
-                          <Award className="h-5 w-5 text-primary-600" />
+                        <h4 className="text-lg font-semibold mb-3 flex items-center gap-2">
+                          <Award className="h-5 w-5 text-primary" />
                           Achievements & Honors
                         </h4>
                         <ul className="space-y-2">
                           {edu.achievements.map((achievement, achievementIndex) => (
                             <li 
                               key={achievementIndex}
-                              className="flex items-start gap-3 text-gray-600 dark:text-gray-300"
+                              className="flex items-start gap-3 text-muted-foreground"
                             >
-                              <span className="text-primary-600 mt-1.5">•</span>
+                              <span className="text-primary mt-1.5">•</span>
                               <span>{achievement}</span>
                             </li>
                           ))}
@@ -119,8 +123,8 @@ export default function Education() {
 
                     {/* Relevant Coursework */}
                     <div>
-                      <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
-                        <BookOpen className="h-5 w-5 text-primary-600" />
+                      <h4 className="text-lg font-semibold mb-3 flex items-center gap-2">
+                        <BookOpen className="h-5 w-5 text-primary" />
                         Relevant Coursework
                       </h4>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -136,19 +140,19 @@ export default function Education() {
                         ].map((course) => (
                           <div
                             key={course}
-                            className="flex items-center gap-2 text-gray-600 dark:text-gray-300"
+                            className="flex items-center gap-2 text-muted-foreground"
                           >
-                            <span className="w-2 h-2 bg-primary-600 rounded-full"></span>
+                            <span className="w-2 h-2 bg-primary rounded-full"></span>
                             <span>{course}</span>
                           </div>
                         ))}
                       </div>
                     </div>
-                  </div>
-                </div>
+                  </CardContent>
+                </Card>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
 
         {/* Additional Education */}
@@ -216,29 +220,31 @@ export default function Education() {
 
         {/* Call to Action */}
         <div className="mt-16 text-center">
-          <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-8">
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-              Always Learning, Always Growing
-            </h3>
-            <p className="text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
-              Education doesn't stop at graduation. I'm committed to continuous learning 
-              and staying current with the latest technologies and best practices.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="/certificates"
-                className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 transition-colors"
-              >
-                View Certificates
-              </a>
-              <a
-                href="/skills"
-                className="inline-flex items-center justify-center px-6 py-3 border border-gray-300 dark:border-gray-600 text-base font-medium rounded-md text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
-              >
-                View Skills
-              </a>
-            </div>
-          </div>
+          <Card className="bg-muted/50 border-none p-8">
+            <CardHeader>
+              <CardTitle className="text-2xl font-bold">
+                Always Learning, Always Growing
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+                Education doesn't stop at graduation. I'm committed to continuous learning 
+                and staying current with the latest technologies and best practices.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button asChild size="lg" className="gap-2">
+                  <Link href="/certificates">
+                    View Certificates
+                  </Link>
+                </Button>
+                <Button asChild size="lg" variant="outline" className="gap-2">
+                  <Link href="/skills">
+                    View Skills
+                  </Link>
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </div>

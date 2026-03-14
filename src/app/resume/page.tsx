@@ -1,5 +1,6 @@
 import { Download, Mail, Phone, MapPin, Calendar, ExternalLink } from 'lucide-react'
 import { personalInfo, workExperience, education, skills, projects } from '@/data/portfolio'
+import { Button } from '@/components/ui/button'
 
 export default function Resume() {
   const featuredProjects = projects.filter(p => p.featured).slice(0, 3)
@@ -34,14 +35,12 @@ export default function Resume() {
             </p>
           </div>
           <div className="mt-6 md:mt-0">
-            <a
-              href="/documents/resume.pdf"
-              download
-              className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
-            >
-              <Download className="h-5 w-5" />
-              Download PDF
-            </a>
+            <Button asChild size="lg" className="gap-2">
+              <a href="/documents/resume.pdf" download>
+                <Download className="h-5 w-5" />
+                Download PDF
+              </a>
+            </Button>
           </div>
         </div>
 

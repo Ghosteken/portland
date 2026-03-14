@@ -68,14 +68,12 @@ export default function Home() {
 
             {/* Action Buttons */}
             <div className="flex flex-wrap justify-center gap-3">
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-6 py-2 rounded-lg font-medium transition-colors"
-              >
-                Get in touch
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-
+              <Button asChild size="lg" className="gap-2">
+                <Link href="/contact">
+                  Get in touch
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Button>
             </div>
           </div>
         </div>
@@ -91,13 +89,12 @@ export default function Home() {
             <p className="text-lg leading-8 text-gray-600 dark:text-gray-300 mb-8">
               {personalInfo.bio}
             </p>
-            <Link
-              href="/about"
-              className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-medium"
-            >
-              Learn more about me
-              <ArrowRight className="h-4 w-4" />
-            </Link>
+            <Button asChild variant="link" className="gap-2 text-primary">
+              <Link href="/about">
+                Learn more about me
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>

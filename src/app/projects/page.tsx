@@ -68,7 +68,7 @@ export default function Projects() {
                         </Button>
                       )}
                       {project.liveUrl && (
-                        <Button asChild variant="outline" size="sm" className="gap-2 border-primary text-primary hover:bg-primary hover:text-white">
+                        <Button asChild variant="outline" size="sm" className="gap-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground">
                           <Link href={project.liveUrl}>
                             <ExternalLink className="h-4 w-4" />
                             Live Demo

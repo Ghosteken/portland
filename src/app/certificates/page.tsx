@@ -2,6 +2,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ExternalLink, Calendar, Award, CheckCircle } from 'lucide-react'
 import { certificates } from '@/data/portfolio'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
 
 export default function Certificates() {
   const formatDate = (dateString: string) => {
@@ -59,38 +62,38 @@ export default function Certificates() {
 
         {/* Statistics */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 text-center">
-            <div className="text-3xl font-bold text-primary-600 mb-2">
+          <Card className="text-center p-6">
+            <div className="text-3xl font-bold text-primary mb-2">
               {certificates.length}
             </div>
-            <div className="text-sm text-gray-600 dark:text-gray-300">
+            <div className="text-sm text-muted-foreground">
               Total Certificates
             </div>
-          </div>
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 text-center">
+          </Card>
+          <Card className="text-center p-6">
             <div className="text-3xl font-bold text-green-600 mb-2">
               {certificates.filter(cert => getExpiryStatus(cert.expiryDate) === 'Valid' || getExpiryStatus(cert.expiryDate) === 'No expiry').length}
             </div>
-            <div className="text-sm text-gray-600 dark:text-gray-300">
+            <div className="text-sm text-muted-foreground">
               Active Certificates
             </div>
-          </div>
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 text-center">
+          </Card>
+          <Card className="text-center p-6">
             <div className="text-3xl font-bold text-blue-600 mb-2">
               {new Set(certificates.map(cert => cert.issuer)).size}
             </div>
-            <div className="text-sm text-gray-600 dark:text-gray-300">
+            <div className="text-sm text-muted-foreground">
               Issuing Organizations
             </div>
-          </div>
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 text-center">
+          </Card>
+          <Card className="text-center p-6">
             <div className="text-3xl font-bold text-purple-600 mb-2">
               {new Date().getFullYear() - Math.min(...certificates.map(cert => new Date(cert.issueDate).getFullYear()))}
             </div>
-            <div className="text-sm text-gray-600 dark:text-gray-300">
+            <div className="text-sm text-muted-foreground">
               Years of Learning
             </div>
-          </div>
+          </Card>
         </div>
 
         {/* Certificates Grid */}
@@ -99,59 +102,56 @@ export default function Certificates() {
             const status = getExpiryStatus(certificate.expiryDate)
             
             return (
-              <div
-                key={certificate.id}
-                className="group bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden"
-              >
+              <Card key={certificate.id} className="group flex flex-col h-full hover:shadow-xl transition-all duration-300 overflow-hidden">
                 {/* Certificate Image */}
-                <div className="aspect-[4/3] relative overflow-hidden bg-gray-100 dark:bg-gray-700">
-                  <div className="w-full h-full flex items-center justify-center text-gray-500 dark:text-gray-400">
+                <CardHeader className="p-0 aspect-[4/3] relative overflow-hidden bg-muted">
+                  <div className="w-full h-full flex items-center justify-center text-muted-foreground">
                     <Award className="h-16 w-16" />
                   </div>
                   
                   {/* Status Badge */}
                   <div className="absolute top-4 right-4">
-                    <span className={`px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(status)}`}>
+                    <Badge variant="secondary" className={cn("font-medium", getStatusColor(status))}>
                       {status}
-                    </span>
+                    </Badge>
                   </div>
                   
                   {/* Verification Badge */}
                   {certificate.verificationUrl && (
                     <div className="absolute top-4 left-4">
-                      <div className="flex items-center gap-1 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-medium">
+                      <Badge className="bg-green-500 text-white hover:bg-green-600 gap-1 border-none">
                         <CheckCircle className="h-3 w-3" />
                         Verified
-                      </div>
+                      </Badge>
                     </div>
                   )}
-                </div>
+                </CardHeader>
 
                 {/* Certificate Content */}
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                <CardContent className="p-6 flex-1">
+                  <CardTitle className="text-xl font-bold mb-2">
                     {certificate.title}
-                  </h3>
-                  <p className="text-lg text-primary-600 font-medium mb-3">
+                  </CardTitle>
+                  <p className="text-lg text-primary font-medium mb-3">
                     {certificate.issuer}
                   </p>
                   
                   {certificate.description && (
-                    <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm">
+                    <p className="text-muted-foreground mb-4 text-sm">
                       {certificate.description}
                     </p>
                   )}
 
                   {/* Certificate Details */}
                   <div className="space-y-2 mb-4">
-                    <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
-                      <Calendar className="h-4 w-4" />
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <Calendar className="h-4 w-4 text-primary" />
                       <span>Issued: {formatDate(certificate.issueDate)}</span>
                     </div>
                     
                     {certificate.expiryDate && (
-                      <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
-                        <Calendar className="h-4 w-4" />
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <Calendar className="h-4 w-4 text-primary" />
                         <span>
                           {isExpired(certificate.expiryDate) ? 'Expired' : 'Expires'}: {formatDate(certificate.expiryDate)}
                         </span>
@@ -159,26 +159,29 @@ export default function Certificates() {
                     )}
                     
                     {certificate.credentialId && (
-                      <div className="text-xs text-gray-400 dark:text-gray-500">
+                      <div className="text-xs text-muted-foreground/60">
                         ID: {certificate.credentialId}
                       </div>
                     )}
                   </div>
+                </CardContent>
 
-                  {/* Action Button */}
+                {/* Action Button */}
+                <CardFooter className="p-6 pt-0 mt-auto">
                   {certificate.verificationUrl && (
-                    <Link
-                      href={certificate.verificationUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full inline-flex items-center justify-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg font-medium transition-colors"
-                    >
-                      <ExternalLink className="h-4 w-4" />
-                      Verify Certificate
-                    </Link>
+                    <Button asChild className="w-full gap-2">
+                      <Link
+                        href={certificate.verificationUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink className="h-4 w-4" />
+                        Verify Certificate
+                      </Link>
+                    </Button>
                   )}
-                </div>
-              </div>
+                </CardFooter>
+              </Card>
             )
           })}
         </div>
