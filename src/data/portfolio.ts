@@ -268,49 +268,136 @@ export const certificates: Certificate[] = [
 
 export const skills: Skill[] = [
   // Frontend & Languages
-  { name: "React", level: "Advanced", category: "Frontend", icon: "react" },
-  { name: "TypeScript", level: "Advanced", category: "Frontend", icon: "typescript" },
-  { name: "Node.js", level: "Advanced", category: "Backend", icon: "nodejs" },
-  { name: "NestJS", level: "Advanced", category: "Backend", icon: "nestjs" },
-  { name: "Express.js", level: "Advanced", category: "Backend", icon: "express" },
-  { name: "Python", level: "Advanced", category: "Backend", icon: "python" },
-  { name: "JavaScript", level: "Advanced", category: "Frontend", icon: "javascript" },
-  { name: "HTML/CSS", level: "Advanced", category: "Frontend", icon: "html" },
+  { 
+    name: "React", 
+    category: "Frontend", 
+    icon: "react",
+    description: "Used for building highly interactive and component-based user interfaces for modern web applications."
+  },
+  { 
+    name: "TypeScript", 
+    category: "Frontend", 
+    icon: "typescript",
+    description: "Leveraged for writing scalable, maintainable, and type-safe code in both frontend and backend projects."
+  },
+  { 
+    name: "Node.js", 
+    category: "Backend", 
+    icon: "nodejs",
+    description: "Core environment for developing high-performance, asynchronous server-side applications and RESTful APIs."
+  },
+  { 
+    name: "NestJS", 
+    category: "Backend", 
+    icon: "nestjs",
+    description: "Preferred framework for building modular, enterprise-grade server-side applications with strong architectural patterns."
+  },
+  { 
+    name: "C#", 
+    category: "Backend", 
+    icon: "csharp",
+    description: "Utilized for developing robust, statically-typed enterprise applications and system components."
+  },
+  { 
+    name: ".NET", 
+    category: "Backend", 
+    icon: "dotnet",
+    description: "Framework used for building cross-platform web APIs, microservices, and desktop applications."
+  },
+  { 
+    name: "Express.js", 
+    category: "Backend", 
+    icon: "express",
+    description: "Used as a minimalist web framework for quickly spinning up flexible and efficient web services."
+  },
+  { 
+    name: "Python", 
+    category: "Backend", 
+    icon: "python",
+    description: "Applied in scripting, data processing, and building backend services with frameworks like Django and FastAPI."
+  },
+  { 
+    name: "JavaScript", 
+    category: "Frontend", 
+    icon: "javascript",
+    description: "The fundamental language for implementing dynamic behavior and logic across the web stack."
+  },
+  { 
+    name: "HTML/CSS", 
+    category: "Frontend", 
+    icon: "html",
+    description: "Essential for crafting structured, responsive, and visually appealing web layouts."
+  },
 
   // Databases
-  { name: "PostgreSQL", level: "Intermediate", category: "Database", icon: "postgresql" },
-  { name: "MySQL", level: "Intermediate", category: "Database", icon: "mysql" },
-  { name: "MongoDB", level: "Intermediate", category: "Database", icon: "mongodb" },
-  { name: "Supabase", level: "Intermediate", category: "Database", icon: "supabase" },
-  { name: "Redis", level: "Intermediate", category: "Database", icon: "redis" },
-  { name: "Prisma", level: "Advanced", category: "Backend", icon: "prisma" },
-  { name: "TypeORM", level: "Intermediate", category: "Backend", icon: "typeorm" },
-  { name: "Mongoose", level: "Intermediate", category: "Backend", icon: "mongoose" },
+  { 
+    name: "PostgreSQL", 
+    category: "Database", 
+    icon: "postgresql",
+    description: "Relational database used for complex data modeling, ensuring integrity and high performance."
+  },
+  { 
+    name: "MySQL", 
+    category: "Database", 
+    icon: "mysql",
+    description: "Widely used relational database for scalable and reliable data storage in various web projects."
+  },
+  { 
+    name: "MongoDB", 
+    category: "Database", 
+    icon: "mongodb",
+    description: "NoSQL database utilized for flexible, document-oriented data storage in real-time applications."
+  },
+  { 
+    name: "Supabase", 
+    category: "Database", 
+    icon: "supabase",
+    description: "Open-source Firebase alternative used for rapid backend development with integrated Auth and Database."
+  },
+  { 
+    name: "Redis", 
+    category: "Database", 
+    icon: "redis",
+    description: "In-memory data store used for high-speed caching and real-time data messaging."
+  },
+  { 
+    name: "Prisma", 
+    category: "Backend", 
+    icon: "prisma",
+    description: "Type-safe ORM for Node.js used to streamline database access and migration workflows."
+  },
 
   // DevOps & Tools
-  { name: "Docker", level: "Intermediate", category: "DevOps", icon: "docker" },
-  { name: "Git", level: "Advanced", category: "DevOps", icon: "git" },
-  { name: "Linux", level: "Intermediate", category: "DevOps", icon: "linux" },
-  { name: "CI/CD Pipelines", level: "Intermediate", category: "DevOps", icon: "cicd" },
-  { name: "GitHub Actions", level: "Intermediate", category: "DevOps", icon: "github-actions" },
-  { name: "Terraform", level: "Intermediate", category: "DevOps", icon: "terraform" },
-  { name: "NGINX", level: "Intermediate", category: "DevOps", icon: "nginx" },
-  { name: "AWS", level: "Intermediate", category: "DevOps", icon: "aws" },
-  { name: "Azure", level: "Intermediate", category: "DevOps", icon: "azure" },
-
-  // Networking
-  { name: "Firewall Configuration", level: "Intermediate", category: "Networking", icon: "firewall" },
-  { name: "Network Security", level: "Intermediate", category: "Networking", icon: "security" },
-  { name: "Security Auditing", level: "Intermediate", category: "Networking", icon: "audit" },
-  { name: "Network Monitoring", level: "Intermediate", category: "Networking", icon: "monitoring" },
-
-  // Methodologies
-  { name: "Agile Methodologies", level: "Advanced", category: "Other", icon: "agile" },
-  { name: "API Development", level: "Advanced", category: "Backend", icon: "api" },
-  { name: "API Documentation (Swagger)", level: "Intermediate", category: "Other", icon: "swagger" },
-  { name: "Postman", level: "Intermediate", category: "Other", icon: "postman" },
-  { name: "Jest", level: "Intermediate", category: "Other", icon: "jest" },
-  { name: "Testing", level: "Intermediate", category: "Other", icon: "testing" }
+  { 
+    name: "Docker", 
+    category: "DevOps", 
+    icon: "docker",
+    description: "Used for containerizing applications to ensure consistent environments across development and production."
+  },
+  { 
+    name: "Git", 
+    category: "DevOps", 
+    icon: "git",
+    description: "Essential version control system for collaborative development and code history management."
+  },
+  { 
+    name: "AWS", 
+    category: "DevOps", 
+    icon: "aws",
+    description: "Cloud platform utilized for deploying scalable applications, managing infrastructure, and using serverless functions."
+  },
+  { 
+    name: "Azure", 
+    category: "DevOps", 
+    icon: "azure",
+    description: "Cloud services platform used for enterprise-level hosting, CI/CD integration, and active directory services."
+  },
+  { 
+    name: "CI/CD Pipelines", 
+    category: "DevOps", 
+    icon: "cicd",
+    description: "Implemented for automated testing and deployment to ensure rapid and reliable software releases."
+  }
 ];
 
 export const web3Experience: Web3Experience = {

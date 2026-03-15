@@ -67,9 +67,9 @@ export interface Certificate {
 
 export interface Skill {
   name: string;
-  level: 'Beginner' | 'Intermediate' | 'Advanced' | 'Expert';
   category: 'Frontend' | 'Backend' | 'Database' | 'DevOps' | 'Mobile' | 'Web3' | 'Networking' | 'Other';
   icon?: string;
+  description?: string;
 }
 
 export interface Web3Experience {
