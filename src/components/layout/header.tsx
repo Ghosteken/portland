@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Menu, X, Sun, Moon } from 'lucide-react'
 import { useTheme } from 'next-themes'
+import { motion, AnimatePresence } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 
@@ -96,55 +97,72 @@ export function Header() {
       </div>
 
       {/* Mobile menu */}
-      {mobileMenuOpen && (
-        <div className="md:hidden">
-          <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm" onClick={() => setMobileMenuOpen(false)} />
-          <div className="fixed inset-y-0 right-0 z-50 w-full max-w-sm bg-background p-6 shadow-2xl border-l border-border transition-all duration-300 ease-in-out">
-            <div className="flex items-center justify-between mb-8">
-              <Link href="/" className="flex items-center space-x-2" onClick={() => setMobileMenuOpen(false)}>
-                <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
-                  <span className="text-primary-foreground font-bold text-sm">N</span>
-                </div>
-                <span className="font-bold text-lg text-foreground">Nicholas</span>
-              </Link>
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => setMobileMenuOpen(false)}
-                className="rounded-full hover:bg-muted"
-              >
-                <X className="h-5 w-5" />
-              </Button>
-            </div>
-
-            <nav className="space-y-1">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className={cn(
-                    "flex items-center px-4 py-3 rounded-lg text-base font-medium transition-all duration-200",
-                    pathname === item.href
-                      ? "bg-primary text-primary-foreground shadow-md"
-                      : "text-muted-foreground hover:bg-muted hover:text-foreground"
-                  )}
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item.name}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <div className="md:hidden fixed inset-0 z-[60]">
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setMobileMenuOpen(false)}
+              className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+            />
+            
+            {/* Sidebar */}
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", damping: 25, stiffness: 200 }}
+              className="absolute right-0 top-0 bottom-0 w-[280px] bg-background p-6 shadow-2xl border-l border-border"
+            >
+              <div className="flex items-center justify-between mb-8">
+                <Link href="/" className="flex items-center space-x-2" onClick={() => setMobileMenuOpen(false)}>
+                  <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
+                    <span className="text-primary-foreground font-bold text-sm">N</span>
+                  </div>
+                  <span className="font-bold text-lg text-foreground">Nicholas</span>
                 </Link>
-              ))}
-
-              <div className="pt-6 mt-6 border-t border-border">
-                <Button variant="outline" className="w-full h-12 text-base font-semibold shadow-sm" asChild>
-                  <Link href="/resume" onClick={() => setMobileMenuOpen(false)}>
-                    Resume
-                  </Link>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="rounded-full hover:bg-muted"
+                >
+                  <X className="h-5 w-5" />
                 </Button>
               </div>
-            </nav>
+
+              <nav className="space-y-1">
+                {navigation.map((item) => (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className={cn(
+                      "flex items-center px-4 py-3 rounded-lg text-base font-medium transition-all duration-200",
+                      pathname === item.href
+                        ? "bg-primary text-primary-foreground shadow-md"
+                        : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                    )}
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+
+                <div className="pt-6 mt-6 border-t border-border">
+                  <Button variant="outline" className="w-full h-12 text-base font-semibold shadow-sm" asChild>
+                    <Link href="/resume" onClick={() => setMobileMenuOpen(false)}>
+                      Resume
+                    </Link>
+                  </Button>
+                </div>
+              </nav>
+            </motion.div>
           </div>
-        </div>
-      )}
+        )}
+      </AnimatePresence>
     </header>
   )
 }
