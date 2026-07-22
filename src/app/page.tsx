@@ -62,7 +62,7 @@ export default function Home() {
               </div>
               <div className="flex items-center gap-1">
                 <Calendar className="h-4 w-4" />
-                Available for opportunities
+                Open to remote roles — US / UK time zones
               </div>
             </div>
 

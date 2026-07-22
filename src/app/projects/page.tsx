@@ -16,12 +16,8 @@ export default function Projects() {
             My Projects
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-4">
-            A showcase of my work, from web applications to blockchain projects
+            A showcase of backend systems, full-stack platforms, and developer tooling I&apos;ve built
           </p>
-          <div className="inline-flex items-center gap-2 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 px-4 py-2 rounded-full text-sm font-medium">
-            <div className="w-2 h-2 bg-yellow-500 rounded-full animate-pulse"></div>
-            Updating Projects
-          </div>
         </div>
 
         {/* Projects List */}

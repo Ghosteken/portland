@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'Nicholas Aigberua - Portfolio',
     short_name: 'Portfolio',
-    description: 'Software Engineer specializing in backend systems, APIs, and Web3 development.',
+    description: 'Lead Software Engineer specializing in backend systems, REST APIs, and cloud infrastructure.',
     start_url: '/',
     display: 'standalone',
     background_color: '#ffffff',

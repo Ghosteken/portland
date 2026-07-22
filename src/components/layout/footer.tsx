@@ -70,20 +70,23 @@ export function Footer() {
             <Link href="/" className="text-muted-foreground hover:text-foreground transition-colors">
               Home
             </Link>
-            <Link href="/projects" className="text-muted-foreground hover:text-foreground transition-colors">
-              Projects
+            <Link href="/about" className="text-muted-foreground hover:text-foreground transition-colors">
+              About
             </Link>
             <Link href="/experience" className="text-muted-foreground hover:text-foreground transition-colors">
               Experience
+            </Link>
+            <Link href="/projects" className="text-muted-foreground hover:text-foreground transition-colors">
+              Projects
+            </Link>
+            <Link href="/skills" className="text-muted-foreground hover:text-foreground transition-colors">
+              Skills
             </Link>
             <Link href="/contact" className="text-muted-foreground hover:text-foreground transition-colors">
               Contact
             </Link>
             <Link href="/resume" className="text-muted-foreground hover:text-foreground transition-colors">
               Resume
-            </Link>
-            <Link href="/web3" className="text-muted-foreground hover:text-foreground transition-colors">
-              Web3
             </Link>
           </div>
         </div>

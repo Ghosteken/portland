@@ -53,40 +53,9 @@ export interface Project {
   category: 'web' | 'mobile' | 'desktop' | 'web3' | 'other';
 }
 
-export interface Certificate {
-  id: string;
-  title: string;
-  issuer: string;
-  issueDate: string;
-  expiryDate?: string;
-  credentialId?: string;
-  verificationUrl?: string;
-  image: string;
-  description?: string;
-}
-
 export interface Skill {
   name: string;
   category: 'Frontend' | 'Backend' | 'Database' | 'DevOps' | 'Mobile' | 'Web3' | 'Networking' | 'Other';
   icon?: string;
   description?: string;
-}
-
-export interface Web3Experience {
-  blockchains: string[];
-  protocols: string[];
-  tools: string[];
-  projects: Project[];
-  socialLinks: SocialLink[];
-}
-
-export interface BlogPost {
-  id: string;
-  title: string;
-  excerpt: string;
-  content: string;
-  publishDate: string;
-  tags: string[];
-  readTime: number;
-  featured: boolean;
 }

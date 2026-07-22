@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
+import { personalInfo } from '@/data/portfolio'
 
 export async function POST(request: NextRequest) {
   try {
@@ -34,7 +35,7 @@ export async function POST(request: NextRequest) {
     // Email content
     const mailOptions = {
       from: process.env.GMAIL_USER,
-      to: 'aigberuan6@gmail.com',
+      to: personalInfo.email,
       subject: `Portfolio Contact: ${subject}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">

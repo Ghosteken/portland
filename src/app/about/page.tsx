@@ -60,7 +60,7 @@ export default function About() {
                 )}
                 <div className="flex items-center gap-3 text-muted-foreground">
                   <Calendar className="h-5 w-5 text-primary" />
-                  <span>Available for opportunities</span>
+                  <span>Open to remote roles — US / UK time zones</span>
                 </div>
               </CardContent>
             </Card>
@@ -83,10 +83,9 @@ export default function About() {
                   evolved into a career focused on building scalable, user-friendly applications.
                 </p>
                 <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                  When I&apos;m not coding, you can find me exploring new technologies, contributing to 
-                  open-source projects, or sharing my knowledge through blog posts and community 
-                  involvement. I believe in continuous learning and staying up-to-date with the 
-                  latest industry trends.
+                  When I&apos;m not coding, you can find me exploring new technologies and contributing to
+                  open-source projects on GitHub. I believe in continuous learning and staying
+                  up-to-date with the latest industry trends.
                 </p>
               </div>
             </section>

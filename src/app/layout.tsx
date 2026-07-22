@@ -12,25 +12,25 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://ghosteken.vercel.app'),
   title: {
-    default: 'Nicholas Aigberua | Software Engineer',
+    default: 'Nicholas Aigberua | Lead Software Engineer',
     template: '%s | Nicholas Aigberua'
   },
-  description: 'Software Engineer specializing in backend systems, APIs, and Web3 development. Portfolio of Nicholas Aigberua.',
-  keywords: ['Software Engineer', 'Backend Developer', 'Node.js', 'TypeScript', 'Python', 'Web3', 'Blockchain', 'Lagos', 'Nigeria'],
+  description: 'Lead Software Engineer specializing in backend systems, REST APIs, and cloud infrastructure (AWS, Azure). Portfolio of Nicholas Aigberua.',
+  keywords: ['Software Engineer', 'Backend Developer', 'Node.js', 'TypeScript', 'C#', '.NET', 'NestJS', 'AWS', 'Azure', 'REST APIs', 'Lagos', 'Nigeria'],
   authors: [{ name: 'Nicholas Aigberua' }],
   creator: 'Nicholas Aigberua',
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: 'https://ghosteken.vercel.app',
-    title: 'Nicholas Aigberua | Software Engineer',
-    description: 'Software Engineer specializing in backend systems, APIs, and Web3 development.',
+    title: 'Nicholas Aigberua | Lead Software Engineer',
+    description: 'Lead Software Engineer specializing in backend systems, REST APIs, and cloud infrastructure (AWS, Azure).',
     siteName: 'Nicholas Aigberua Portfolio',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Nicholas Aigberua | Software Engineer',
-    description: 'Software Engineer specializing in backend systems, APIs, and Web3 development.',
+    title: 'Nicholas Aigberua | Lead Software Engineer',
+    description: 'Lead Software Engineer specializing in backend systems, REST APIs, and cloud infrastructure (AWS, Azure).',
     creator: '@Ghosteken',
   },
   robots: {

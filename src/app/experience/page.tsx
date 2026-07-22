@@ -1,5 +1,5 @@
-import { Calendar, MapPin, ExternalLink, Award, GraduationCap, CheckCircle } from 'lucide-react'
-import { workExperience, education, certificates } from '@/data/portfolio'
+import { Calendar, ExternalLink, Award } from 'lucide-react'
+import { workExperience } from '@/data/portfolio'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
